@@ -23,7 +23,16 @@ langt oppe på siden  */
     display: block;
     color: #FFFBF3;
     padding: 10px;
+    margin: 3%;
     text-decoration: none;
+    border-radius: 20px;
+    border-style:solid;
+    border-color: #FFFBF3;
+  }
+
+  /*fjerner den blåfargen og bytter den med rød når du hovrer på knappen :) "*/
+  a:hover {
+    color: red;
   }
   
   #active {
