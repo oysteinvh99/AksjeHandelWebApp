@@ -12,7 +12,8 @@ header{
 footer{
     margin-top: auto;
     background-color: #5F9DF7;
-    color:#FFFBF3
+    color:#FFFBF3;
+    padding-top:2vh;
 }
 
 /* Inne i Main, slik at innholdet ikke blir for 
