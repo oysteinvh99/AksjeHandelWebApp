@@ -1,3 +1,3 @@
 Aksjehandelapp
 
-Tester at Github push fungerer - Oløf :)
+Gruppeoppgave 1, i faget ITPE 3200 Webapplikasjoner, høst 2022 ved OsloMet.
