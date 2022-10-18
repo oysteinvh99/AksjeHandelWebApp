@@ -2,8 +2,21 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: #FFFBF3;
+}
+
+header{
+    background-color:#5F9DF7; /* funker ikke??  */ 
 }
 
 footer{
     margin-top: auto;
+    background-color: #5F9DF7;
+    color:#FFFBF3
+}
+
+/* Inne i Main, slik at innholdet ikke blir for 
+langt oppe på siden  */ 
+#main-row{
+    padding-top: 10vh;
 }

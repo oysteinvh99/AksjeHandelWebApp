@@ -35,28 +35,46 @@
             
     </header>
 
-    <main id="nain-index" class="container">
-        <div id="Aksjehandel">
-            <p>
-                Hei dette er en random text om aksjesiden
-            </p>
+    <main class="container">
+        <!-- Deler main i to rows, som gjør at vi kan ha tekst på venstre side
+        og bilde på høyre side, og at de vil flyttes på responsivt
+        hver av rowsene tar 50% av plassen i containeren -->
+        <div class="container">
+            <div class="row" id="main-row">
+                <!-- Venstre side med tittel og tekst -->
+                <div class="col-sm">
+                    <h1>Tittel</h1>
+                    <p>Norges mest brukte handel for kjøp of salg av aksjer.
+                        <br>
+                        <br>
+                        Vi har de mest fornøyde kundene.
+                        Hos oss kan aksjene dine vokse og skape bærekraftig verdi.
+                    </p>
+
+                </div>
+                <div class="col-sm">
+                <!-- Høyre side med bilde-->
+                    <h3>Legge til Bilde her</h3>
+                </div>
+            </div>
         </div>
     </main>
 
 
-
     <footer>
-        <div class="container">    
-            <div>
+        <div class="container">
+            <div class="row">
+              <div class="col-sm-4">
                 <h1>Logo</h1>
-            </div>
-            <div>
+              </div>
+              <div class="col-sm-8">
                 <p>
-                Copyright Brandname <br>
-                Pilestredet 35, 0166, Oslo, Norway
-                </p>
+                    Copyright Brandname <br>
+                    Pilestredet 35, 0166, Oslo, Norway
+                    </p>
+              </div>
             </div>
-        </div>
+          </div> 
     </footer>
 </body>
 </html>
