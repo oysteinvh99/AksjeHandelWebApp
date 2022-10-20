@@ -1,5 +1,5 @@
 using System;
-namespace AksjeHandelWebApp.Model
+namespace AksjeHandelWebApp.Models
 {
     public class Ordre
     {
