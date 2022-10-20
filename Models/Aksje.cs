@@ -8,7 +8,7 @@ namespace AksjeHandelWebApp.Models
         public int Id { get; set; }
         public float Verdi { get; set; }
         public virtual Firma Firma { get; set; }
-        public virtual List<OrdreLinje> OrdreLinjer { get; set; }
+        public virtual List<Ordre> Ordre { get; set; }
         
 
 

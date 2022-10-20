@@ -21,7 +21,7 @@ namespace AksjeHandelWebApp.Models
 
         public virtual DbSet<Aksje> Aksjer { get; set; }
 
-        public virtual DbSet<OrdreLinje> Ordrelinjer { get; set; }
+        //public virtual DbSet<OrdreLinje> Ordrelinjer { get; set; }
 
 
 

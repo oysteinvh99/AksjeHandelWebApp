@@ -9,6 +9,7 @@ namespace AksjeHandelWebApp.Models
         public string Fornavn { get; set; }
         public string Etternavn  { get; set; }
         public string Telefon { get; set; }
+        public string Email { get; set; }
         public virtual Portofolje Portofolje { get; set; }
     }
 }

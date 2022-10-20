@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 namespace AksjeHandelWebApp.Models
 {
     public class OrdreLinje
@@ -9,5 +9,5 @@ namespace AksjeHandelWebApp.Models
         public virtual Ordre Ordre { get; set; }
 
     }
-}
+}*/
 

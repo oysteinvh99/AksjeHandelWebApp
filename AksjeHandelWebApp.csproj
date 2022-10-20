@@ -13,5 +13,9 @@
   <ItemGroup>
     <None Remove="Person.db-shm" />
     <None Remove="Person.db-shm" />
+    <None Remove="DAL\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAL\" />
   </ItemGroup>
 </Project>
