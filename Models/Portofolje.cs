@@ -8,6 +8,5 @@ namespace AksjeHandelWebApp.Model
         public float Verdi { get; set; }
         public virtual Person BrukerID { get; set; }
         public virtual List<Ordre> Ordreliste { get; set; }
-
-    }
+    } 
 }
