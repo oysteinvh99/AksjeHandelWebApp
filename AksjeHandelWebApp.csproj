@@ -12,4 +12,10 @@
     <Folder Include="wwwroot\" />
     <Folder Include="wwwroot\js\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Models\Models" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ordre.cs" />
+  </ItemGroup>
 </Project>
