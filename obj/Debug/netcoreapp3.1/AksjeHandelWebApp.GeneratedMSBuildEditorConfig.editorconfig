@@ -1,3 +1,7 @@
 is_global = true
 build_property.RootNamespace = AksjeHandelWebApp
+<<<<<<< Updated upstream
 build_property.ProjectDir = C:\Users\adria\AndroidStudioProjects\flagg\AksjeHandelWebApp\
+=======
+build_property.ProjectDir = /Users/oysteinhetland/Projects/AksjeHandelWebApp/AksjeHandelWebApp/
+>>>>>>> Stashed changes
