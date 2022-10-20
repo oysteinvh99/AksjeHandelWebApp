@@ -1,3 +1,8 @@
+using System.Collections.Generic;
+using System.Linq;
+using AksjeHandelWebApp.Models;
+using Microsoft.AspNetCore.Mvc;
+
 namespace AksjeHandelWebApp.Controllers
 {
     [Route("[controller]/[action]")]
@@ -11,7 +16,7 @@ namespace AksjeHandelWebApp.Controllers
             _db = db;
         }
 
-        public List<Portifolje> hentPortofoljer()
+        public List<Portofolje> hentPortofoljer()
         {
             return _db.Portofoljer.ToList();
         }
