@@ -48,6 +48,14 @@ langt oppe på siden  */
     color: #FFFBF3;
   }
 
+  /* Icon til Logg inn knapp*/
+  #logicon {
+    content:url("../img/login_icon_w.png");
+    height:"80%";
+    width: "80%";
+    padding-right: 15px;
+    float:right;
+  }
   
 
   footer{
