@@ -31,17 +31,24 @@ langt oppe på siden  */
   }
 
   /*fjerner den blåfargen og bytter den med rød når du hovrer på knappen :) "*/
-  a:hover {
-    color: red;
-  }
+  
   
   #active {
-    background-color: #4CAF50;
+    background-color: #FFFBF3;
+    color: #5F9DF7;
   }
-  
+
+  #active:hover {
+    background-color: #81b2fc;
+    color: #FFFBF3;
+  }
+
   li a:hover {
-    background-color: none;
+    background-color: #81b2fc;
+    color: #FFFBF3;
   }
+
+  
 
   footer{
     margin-top: auto;
