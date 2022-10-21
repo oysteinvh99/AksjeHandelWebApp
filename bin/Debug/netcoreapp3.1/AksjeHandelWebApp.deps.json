@@ -33,7 +33,6 @@
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.4",
           "Microsoft.EntityFrameworkCore": "3.1.4",
-          "Microsoft.EntityFrameworkCore.Analyzers": "3.1.4",
           "Microsoft.EntityFrameworkCore.Proxies": "3.1.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.4",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
