@@ -49,22 +49,33 @@
     <!-- START PÅ HOVEDOMRÅDE xxxxxxxxxxxxxxxxxxxxxxx
     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
     
+
+
     <main class="container">
-        <!-- Deler main i to rows, som gjør at vi kan ha tekst på venstre side
-        og bilde på høyre side, og at de vil flyttes på responsivt
-        hver av rowsene tar 50% av plassen i containeren -->
         <div class="container">
-            <h2>
-            Dette er din bestilling:
-            </h2>
-            <p> Du ønsker å : Kjøpe / selge 
-                Aksje: DNB
-                Til pris:
-            </p>
-            <button class="btn btn-success" onclick="">Godkjenn</button>
-            <button class="btn btn-secondary" onclick="">Ikke Godkjenn</button>
-        </div>
-    </main>
+            <div class="row" id="main">
+                <div class="col-sm">
+                    <h2>
+                        Dette er din bestilling:
+                    </h2>
+                    <form>
+                    <p> Du ønsker å : Kjøpe / selge 
+                            Aksje: DNB
+                            Til pris:
+                    </p>
+                    <!-- Eller heller bruke denne formatteringen????
+                    <label for="epost">Epost:</label>
+                    <input type="text" id="email" name="epost"><br><br>
+                    -->
+                    <button class="btn btn-success" onclick="">Godkjenn</button>
+                    <button class="btn btn-secondary" onclick="">Ikke Godkjenn</button>
+                    </form>
+                </div>
+            </div>
+        </div>   
+    </main>     
+
+
 
      <!-- SLUTT PÅ HOVEDMOMRÅDE xxxxxxxxxxxxxxxxxxxxxxx
     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
