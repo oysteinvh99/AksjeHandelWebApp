@@ -56,6 +56,14 @@ langt oppe på siden  */
     padding-right: 15px;
     float:right;
   }
+
+  #logicon:hover{
+    content:url("../img/login_icon.png");
+    height:"80%";
+    width: "80%";
+    padding-right: 15px;
+    float:right;
+  }
   
 
   footer{
