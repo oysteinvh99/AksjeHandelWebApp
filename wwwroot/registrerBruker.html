@@ -14,31 +14,10 @@
         <div class="container">
             <div class="row">
               <div class="col-3">
+                <a href="index.html">
                 <img id="logobildet" href="#" src="img/Askjehandelen.png" alt="Logoen" width="78%" height="90%">
+                </a>
               </div>
-
-              <div class="col-9">
-                <nav class="nav-fill px-2 py-2">
-                    <div class="container-fluid">
-                        <ul class="nav">
-                            <li class="nav-item">
-                                <a id= active href="#forside">Forside</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#handel">Aksjehandel</a>
-                            <li class="nav-item">
-                                <a href="#minside">Min Side</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#omoss">Om Oss</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#logginn">Logg Inn<div id="logicon"></div></a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav> 
-            </div>  
         </div>
             
     </header>
@@ -52,10 +31,17 @@
                 <!-- Venstre side med tittel og tekst -->
                 <div class="col-sm">
                     <h2>Registrer deg her som ny bruker:</h2> 
-                    <form>
-                        <label for="epost">Epost:</label>
-                        <input type="text" id="epost" name="epost"><br><br>
-                        <input type="submit" value="Registrer ny bruker">
+                    <form action="loggInn.html">
+                        <label for="fornavn">Fornavn:</label><br>
+                        <input type="text" id="fornavn" name="fornavn"><br><br>
+                        <label for="etternavn">Etternavn:</label><br>
+                        <input type="text" id="etternav" name="etternavn"><br><br>
+                        <label for="telefon">Telefon:</label><br>
+                        <input type="text" id="telefon" name="telefom"><br><br>
+                        <label for="email">Email:</label><br>
+                        <input type="text" id="email" name="email"><br><br>
+                        <input type="submit" value="Registrer ny bruker" onclick="addvalue"><br><br>
+                        <a href="loggInn.html">Allerede registrert? trykk her for å gå tilbake</a>
                     </form> 
                 </div>
             </div>
