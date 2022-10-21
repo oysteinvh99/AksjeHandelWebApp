@@ -11,7 +11,6 @@ namespace AksjeHandelWebApp.Models
             using (var serviceScope = app.ApplicationServices.CreateScope())
             {
                 var context = serviceScope.ServiceProvider.GetService<DB>();
-                context.Database.EnsureDeleted();
                 context.Database.EnsureCreated();
 
 

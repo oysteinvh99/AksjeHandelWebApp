@@ -3,7 +3,7 @@
 });
 
 function hentAlleAksjene() {
-    $.post("Home/hentAksjer", function (Aksjer) {
+    $.get("Home/hentAksjer", function (Aksjer) {
         formaterAksjer(Aksjer);
     });
 }
@@ -11,13 +11,14 @@ function hentAlleAksjene() {
 function formaterAksjer(Aksjer) {
     let ut = "<table class='table table-striped'>" +
         "<tr>" +
-        "<th>Navn</th><th>Pris</th><th></th>" +
+        "<th>Navn</th><th>Pris</th><th>Antall</th><th>Kjøp</th>" +
         "</tr>";
     for (let aksje of Aksjer) {
         ut += "<tr>" +
-            "<td>" + aksje.Firma.Navn + "</td>" +
-            "<td>" + aksje.Verdi + "</td>" +
-            "<td> <a class='btn btn-primary' href='kjopside.html?id=" + aksje.Id + url + "'>Kjøp</a></td>" +
+            "<td>" + aksje.firma.navn + "</td>" +
+            "<td>" + aksje.verdi + "</td>" +
+            "<td>" + "<input type='text' style='width: 2.5em'></td>" +
+            "<td> <a class='btn btn-primary' href='index.html?id=" + aksje.id + "'>Kjøp</a></td>" +
             "</tr>";
     }
     ut += "</table>";

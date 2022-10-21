@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AksjeHandelWebApp.DAL
 {
-    public class PersonRepository
+    public class PersonRepository :IPersonRepository
     {
     
         private readonly DB _db;
