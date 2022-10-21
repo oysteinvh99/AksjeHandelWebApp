@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using System.Text;
 
 namespace AksjeHandelWebApp.DAL
 {
@@ -76,6 +77,19 @@ namespace AksjeHandelWebApp.DAL
             catch
             {
                 return null;
+            }
+        }
+        public async Task<int> sjekkPerson(string email)
+        { 
+       
+            try
+            {
+                Person enPerson = _db.Personer.Single(x => x.Email.Equals(email));
+                return enPerson.Id;
+            }
+            catch
+            {
+                return 0;
             }
         }
     }
