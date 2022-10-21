@@ -17,23 +17,37 @@ namespace AksjeHandelWebApp.Controllers
         {
             _db = db;
         }
+        
         public async Task<Person> hentPerson(int id) { 
             return await _db.hentPerson(id);
 
         }
+        
         public async Task<List<Aksje>> hentAksjer()
         {
-
-        
             return await _db.hentAksjer();
-        
-
+       
         }
         public async Task<Portofolje> hentPortofolje(int id)
 
         {
             return await _db.hentPortofolje(id);
                 
+        }
+        
+        public async Task<bool> registrerOrder(Ordre innOrder)
+        {
+            return await _db.registrerOrder(innOrder);
+        }
+
+        public async Task<Firma> hentFirma(int id)
+        {
+            return await _db.hentFirma(id);
+        }
+
+        public async Task<bool> slettBruker(int id)
+        {
+            return await _db.slettBruker(id);
         }
     }
 }
