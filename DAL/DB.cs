@@ -8,7 +8,7 @@ namespace AksjeHandelWebApp.Models
     {
         public DB(DbContextOptions<DB> options) : base(options)
         {
-            Datebase.EnsureCreated();
+            Database.EnsureCreated();
         }
 
         public virtual DbSet<Person> Personer { get; set; }
@@ -21,7 +21,7 @@ namespace AksjeHandelWebApp.Models
 
         public virtual DbSet<Aksje> Aksjer { get; set; }
 
-        public virtual DbSet<OrdreLinje> Ordrelinjer { get; set; }
+        //public virtual DbSet<OrdreLinje> Ordrelinjer { get; set; }
 
 
 

@@ -3,29 +3,19 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Remove="wwwroot\" />
-    <Content Remove="wwwroot\js\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-    <Folder Include="wwwroot\js\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="Models\Models" />
-    <None Remove="Microsoft.EntityFrameworkCore" />
-    <None Remove="Microsoft.EntityFrameworkCore.Proxies" />
-    <None Remove="Microsoft.AspNetCore.Mvc.NewtonsoftJson" />
-    <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Models\Ordre.cs" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.4" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.4" />
+   
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Person.db-shm" />
+    <None Remove="Person.db-shm" />
+    <None Remove="DAL\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAL\" />
   </ItemGroup>
 </Project>

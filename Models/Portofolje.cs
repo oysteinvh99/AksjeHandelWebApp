@@ -1,12 +1,15 @@
 using System;
-namespace AksjeHandelWebApp.Model
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace AksjeHandelWebApp.Models
 {
     public class Portofolje
     {
-        public int PortofoljeID { get; set; }
-        public virtual List<Aksje> Aksjer { get; set }
-        public float Verdi { get; set; }
-        public virtual Person BrukerID { get; set; }
-        public virtual List<Ordre> Ordreliste { get; set; }
-    } 
+        public int Id { get; set; }
+        [ForeignKey("Person")]
+        public virtual Person person { get; set; }
+
+
+    }
 }
