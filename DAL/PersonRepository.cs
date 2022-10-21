@@ -92,6 +92,70 @@ namespace AksjeHandelWebApp.DAL
                 return 0;
             }
         }
+        
+         public async Task<bool> registrerOrder(Ordre innOrder)
+        {
+            try
+            {
+                var nyOrder = new Ordre();
+                nyOrder.Dato = innOrder.Dato;
+                nyOrder.Id = innOrder.Id;
+
+                var sjekkPortofolje = await _db.Portofoljer.FindAsync(innOrder.Portofolje);
+                var sjekkAksje = await _db.Aksjer.FindAsync(innOrder.Aksje);
+                if (sjekkPortofolje == null || sjekkAksje ==null)
+                {
+                    return false;
+                }
+                else
+                {
+                    nyOrder.Portofolje = innOrder.Portofolje;
+                    nyOrder.Aksje = innOrder.Aksje;
+                    _db.Ordre.Add(nyOrder);
+                    await _db.SaveChangesAsync();
+                    return true;
+                }
+
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        
+       public async Task<Firma> hentFirma(int id)
+        {
+            try
+            {
+                Firma etFirma = await _db.Firmaer.FindAsync(id);
+                var hentetFirma = new Firma()
+                {
+                    Id = etFirma.Id,
+                    Navn = etFirma.Navn,
+                    ForsteDagPaBors = etFirma.ForsteDagPaBors,
+                    Utbytte = etFirma.Utbytte
+                };
+                return etFirma;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        
+        public async Task<bool> slettBruker(int id)
+        {
+            try {
+                Person enPerson = await _db.Personer.FindAsync(id);
+                Portofolje portofolje = await _db.Portofoljer.FindAsync(enPerson.Portofolje.Id);
+                _db.Personer.Remove(enPerson);
+                _db.Portofoljer.Remove(portofolje);
+                await _db.SaveChangesAsync();
+                return true; 
+            }
+            catch { 
+                return false;
+            }
     }
 }
 
