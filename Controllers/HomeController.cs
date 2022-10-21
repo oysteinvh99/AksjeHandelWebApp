@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using AksjeHandelWebApp.DAL;
 using AksjeHandelWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,26 +11,29 @@ namespace AksjeHandelWebApp.Controllers
 
     public class HomeController : ControllerBase
     {
-        private readonly DB _db;
+        private readonly IPersonRepository _db;
 
-        public HomeController(DB db)
+        public HomeController(IPersonRepository db)
         {
             _db = db;
         }
+        public async Task<Person> hentPerson(int id) { 
+            return await _db.hentPerson(id);
 
-        public List<Portofolje> hentPortofoljer()
-        {
-            return _db.Portofoljer.ToList();
         }
-
-        public List<Firma> hentFirmaer()
+        public async Task<List<Aksje>> hentAksjer()
         {
-            return _db.Firmaer.ToList();
+
+        
+            return await _db.hentAksjer();
+        
+
         }
+        public async Task<Portofolje> hentPortofolje(int id)
 
-        public List<Person> hentPersoner()
         {
-            return _db.Personer.ToList();
+            return await _db.hentPortofolje(id);
+                
         }
     }
 }
