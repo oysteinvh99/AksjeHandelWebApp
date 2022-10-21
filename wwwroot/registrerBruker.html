@@ -22,12 +22,13 @@
             
     </header>
 
+    
     <main class="container">
         <!-- Deler main i to rows, som gjør at vi kan ha tekst på venstre side
         og bilde på høyre side, og at de vil flyttes på responsivt
         hver av rowsene tar 50% av plassen i containeren -->
         <div class="container">
-            <div class="row" id="main-row">
+            <div class="row" id="main">
                 <!-- Venstre side med tittel og tekst -->
                 <div class="col-sm">
                     <h2>Registrer deg her som ny bruker:</h2> 
@@ -40,13 +41,14 @@
                         <input type="text" id="telefon" name="telefom"><br><br>
                         <label for="email">Email:</label><br>
                         <input type="text" id="email" name="email"><br><br>
-                        <input type="submit" value="Registrer ny bruker" onclick="addvalue"><br><br>
+                        <a href="loggInn.html" class='btn btn-primary' id="registrer" onclick="registrerBruker()"> Registrering </a><br><br>
                         <a href="loggInn.html">Allerede registrert? trykk her for å gå tilbake</a>
                     </form> 
                 </div>
             </div>
         </div>
     </main>
+
 
     <footer>
         <div class="container">

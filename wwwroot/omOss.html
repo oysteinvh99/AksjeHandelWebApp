@@ -50,15 +50,28 @@
     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
     
     <main class="container">
-        <h2>Om Oss</h2>
-        <p>Bedriften ble startet i 2020. Vi holder til i nyopppussede lokaler
-            ved Pilestredet 35 i Oslo.
-            <br>
-            Ta kontakt med oss på telefon: 40405050
-            <br>
-            Send oss en epost på: kontakt@aksjehandelen.no
-
-        </p>
+        <!-- Deler main i to rows, som gjør at vi kan ha tekst på venstre side
+        og bilde på høyre side, og at de vil flyttes på responsivt
+        hver av rowsene tar 50% av plassen i containeren -->
+        <div class="container">
+            <div class="row" id="main">
+                <!-- Venstre side med tittel og tekst -->
+                <div class="col-sm">
+                    <h2>Om Oss</h2>
+                    <p>Bedriften ble startet i 2020. Vi holder til i nyopppussede lokaler
+                        ved Pilestredet 35 i Oslo.
+                        <br>
+                        Ta kontakt med oss på telefon: 40405050
+                        <br>
+                        Send oss en epost på: kontakt@aksjehandelen.no
+                    </p>
+                </div>
+                <div class="col-sm">
+                <!-- Høyre side med bilde-->
+                    <img id="omOssbildet" src="img/annie-spratt-IT6aov1ScW0-unsplash.jpg" alt="newspaper" width="65%" height="65%">
+                </div>
+            </div>
+        </div>
     </main>
 
      <!-- SLUTT PÅ HOVEDMOMRÅDE xxxxxxxxxxxxxxxxxxxxxxx
