@@ -8,9 +8,9 @@ using System.Text;
 
 namespace AksjeHandelWebApp.DAL
 {
-    public class PersonRepository :IPersonRepository
+    public class PersonRepository : IPersonRepository
     {
-    
+
         private readonly DB _db;
 
         public PersonRepository(DB db)
@@ -80,8 +80,8 @@ namespace AksjeHandelWebApp.DAL
             }
         }
         public async Task<int> sjekkPerson(string email)
-        { 
-       
+        {
+
             try
             {
                 Person enPerson = _db.Personer.Single(x => x.Email.Equals(email));
@@ -92,8 +92,8 @@ namespace AksjeHandelWebApp.DAL
                 return 0;
             }
         }
-        
-         public async Task<bool> registrerOrder(Ordre innOrder)
+
+        public async Task<bool> registrerOrder(Ordre innOrder)
         {
             try
             {
@@ -103,7 +103,7 @@ namespace AksjeHandelWebApp.DAL
 
                 var sjekkPortofolje = await _db.Portofoljer.FindAsync(innOrder.Portofolje);
                 var sjekkAksje = await _db.Aksjer.FindAsync(innOrder.Aksje);
-                if (sjekkPortofolje == null || sjekkAksje ==null)
+                if (sjekkPortofolje == null || sjekkAksje == null)
                 {
                     return false;
                 }
@@ -122,8 +122,8 @@ namespace AksjeHandelWebApp.DAL
                 return false;
             }
         }
-        
-       public async Task<Firma> hentFirma(int id)
+
+        public async Task<Firma> hentFirma(int id)
         {
             try
             {
@@ -142,20 +142,23 @@ namespace AksjeHandelWebApp.DAL
                 return null;
             }
         }
-        
+
         public async Task<bool> slettBruker(int id)
         {
-            try {
+            try
+            {
                 Person enPerson = await _db.Personer.FindAsync(id);
                 Portofolje portofolje = await _db.Portofoljer.FindAsync(enPerson.Portofolje.Id);
                 _db.Personer.Remove(enPerson);
                 _db.Portofoljer.Remove(portofolje);
                 await _db.SaveChangesAsync();
-                return true; 
+                return true;
             }
-            catch { 
+            catch
+            {
                 return false;
             }
+        }
     }
 }
 
