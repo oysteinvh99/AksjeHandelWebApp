@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AksjeHandelWebApp.Models
 {
@@ -10,6 +11,7 @@ namespace AksjeHandelWebApp.Models
         public string Etternavn  { get; set; }
         public string Telefon { get; set; }
         public string Email { get; set; }
+        [ForeignKey("Portefolje")]
         public virtual Portofolje Portofolje { get; set; }
     }
 }
