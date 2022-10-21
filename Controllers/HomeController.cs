@@ -35,5 +35,9 @@ namespace AksjeHandelWebApp.Controllers
             return await _db.hentPortofolje(id);
                 
         }
+        public async Task<int> sjekkPerson(string email)
+        {
+            return await _db.sjekkPerson(email);
+        }
     }
 }

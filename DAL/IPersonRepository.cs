@@ -10,6 +10,7 @@ namespace AksjeHandelWebApp.DAL
          Task<Person> hentPerson(int id);
          Task<List<Aksje>> hentAksjer();
          Task <Portofolje> hentPortofolje(int id);
+        Task<int> sjekkPerson(string email);
     }
 }
 
