@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AksjeHandelWebApp.Models
 {
-    public class Portofolje
+    public class Portefolje
     {
         public int Id { get; set; }
-        public virtual Person person { get; set; }
+        public virtual Person Person { get; set; }
+        public virtual List<Ordre> Ordre { get; set; }
        
       
        
