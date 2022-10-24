@@ -16,7 +16,7 @@ function formaterAksjer(Aksjer) {
     for (let aksje of Aksjer) {
         ut += "<tr>" +
             "<td>" + aksje.firma.navn + "</td>" +
-            "<td>" + aksje.verdi + "</td>" +
+            "<td>" + aksje.verdi+ "</td>" +
             "<td>" + "<input type='text' id='antall' style='width: 2.5em'></td>" +
             "<td> <a class='btn btn-primary' href='index.html?id=" + aksje.id + "'>Kjøp</a></td>" +
             "</tr>";

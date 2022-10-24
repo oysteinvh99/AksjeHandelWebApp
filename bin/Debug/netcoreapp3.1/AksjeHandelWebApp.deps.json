@@ -32,7 +32,11 @@
       "AksjeHandelWebApp/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.4",
+<<<<<<< Updated upstream
           "Microsoft.CodeAnalysis.Analyzers": "3.3.0",
+=======
+          "Microsoft.CodeAnalysis.Analyzers": "3.3.2",
+>>>>>>> Stashed changes
           "Microsoft.EntityFrameworkCore": "3.1.4",
           "Microsoft.EntityFrameworkCore.Proxies": "3.1.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.4",
@@ -388,7 +392,11 @@
           "ref/netcoreapp2.1/Microsoft.Bcl.HashCode.dll": {}
         }
       },
+<<<<<<< Updated upstream
       "Microsoft.CodeAnalysis.Analyzers/3.3.0": {},
+=======
+      "Microsoft.CodeAnalysis.Analyzers/3.3.2": {},
+>>>>>>> Stashed changes
       "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Data.Sqlite.Core/3.1.4": {
         "dependencies": {
@@ -3246,12 +3254,21 @@
       "path": "microsoft.bcl.hashcode/1.1.0",
       "hashPath": "microsoft.bcl.hashcode.1.1.0.nupkg.sha512"
     },
+<<<<<<< Updated upstream
     "Microsoft.CodeAnalysis.Analyzers/3.3.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-DGStrsethnSDdsjTireE68Vu6kXxyvdbJCQjNJTeT620l9XG9fVVz8UYlR7cXVnG+p0UuXkRyLZRj9tw6tUXlw==",
       "path": "microsoft.codeanalysis.analyzers/3.3.0",
       "hashPath": "microsoft.codeanalysis.analyzers.3.3.0.nupkg.sha512"
+=======
+    "Microsoft.CodeAnalysis.Analyzers/3.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7xt6zTlIEizUgEsYAIgm37EbdkiMmr6fP6J9pDoKEpiGM4pi32BCPGr/IczmSJI9Zzp0a6HOzpr9OvpMP+2veA==",
+      "path": "microsoft.codeanalysis.analyzers/3.3.2",
+      "hashPath": "microsoft.codeanalysis.analyzers.3.3.2.nupkg.sha512"
+>>>>>>> Stashed changes
     },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",

@@ -14,7 +14,11 @@ namespace AksjeHandelWebApp.DAL
         Task<bool>registrerOrder(Ordre innOrder);
         Task<Firma>hentFirma(int id);
         Task<bool>slettBruker(int id);
+<<<<<<< Updated upstream
         Task<int> lagrePerson(Person innPerson);
+=======
+        Task<int> registrerBruker(Person innPerson);
+>>>>>>> Stashed changes
     }
 }
 
