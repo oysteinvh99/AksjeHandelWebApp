@@ -172,7 +172,7 @@ namespace AksjeHandelWebApp.DAL
             try
             {
                 Aksje enAskje = await _db.Aksjer.FindAsync(id);
-                var hentetAksje = new Aksje()
+                Aksje hentetAksje = new Aksje()
                 {
                     Id = enAskje.Id,
                     Firma = enAskje.Firma,

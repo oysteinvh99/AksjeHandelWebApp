@@ -10,10 +10,5 @@ namespace AksjeHandelWebApp.Models
         public virtual Person Person { get; set; }
         public virtual List<Ordre> Ordre { get; set; }
        
-      
-       
-
-
-
     }
 }

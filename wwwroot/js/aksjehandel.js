@@ -18,8 +18,8 @@ function formaterAksjer(Aksjer) {
             "<td>" + aksje.firma.navn + "</td>" +
             "<td>" + aksje.verdi + "</td>" +
             "<td>" + "<input type='text' id='antall' style='width: 2.5em'></td>" +
-            "<td> <a class='btn btn-primary' href='kjopBekreftelse.html?id=" + aksje.id + "&antall=" + $("#antall").val() + "'>Kjøp</a></td>" +
-            "<td> <a class='btn btn-danger' href='salgbekreftelse.html?id=" + aksje.id + "&antall=" + $("#antall").val() + "'>Salg</a></td>" +
+            "<td> <a class='btn btn-primary' href='bestilling.html?id=" + aksje.id + "&antall=" + $("#antall").val() + "'>Kjøp</a></td>" +
+            "<td> <a class='btn btn-danger' href='Salgbekreftelse.html?id=" + aksje.id + "&antall=" + $("#antall").val() + "'>Salg</a></td>" +
             "</tr>";
     }
     ut += "</table>";

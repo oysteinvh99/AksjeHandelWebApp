@@ -21,53 +21,53 @@ function formatter(Aksje, antall,AID) {
     var antallet = 0;
     antallet = parseInt(antall);
     totalPris = Aksje.verdi * antallet;
-    $("#info").html("Pris pr. Aksje: " + Aksje.verdi + " og antall aksjer:" + antallet);
-    $("#totalpris").html("Totalpris:" + totalPris);
+    $("#info").html("Du kjøper " + antallet + ". " + Aksje.firma.navn + " aksjer " + "(" + Aksje.verdi+" pr. aksje)");
+    $("#totalPris").html("Totalpris: " + totalPris+" kr.");
     $("#antall").html(antallet);
-    $("#firmanavn").html("Navnet på firma:" + Aksje.firma.navn);
     $("#aksjenSinIDGjemt").html(AID)
 }
 
 //Registrere ordre, kjøp
 function bekreftOrdre() {
-    var portofolje = hentPortofolje(sessionsStorage.getItem("id"))  //Portofolje ID for å hente portofoljen
-    var aksje = hentAksje($("#aksjenSinIDGjemt").val());
-    //Hentet fra nettet, datetime
-    var datetime = "Last Sync: " + currentdate.getDate() + "/"
-        + (currentdate.getMonth() + 1) + "/"
-        + currentdate.getFullYear() + " @ "
-        + currentdate.getHours() + ":"
-        + currentdate.getMinutes() + ":";
-    console.log(datetime);
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+    const AID = params.id;
 
-    var Order = {
+    console.log(AID);
+
+    var portofolje = hentPortofolje(1); //Portofolje ID for å hente portofoljen
+    var aksje = hentAksje(AID);
+
+    //Hentet fra nettet, datetime
+    var currentdate = new Date();
+    var datetime = "Last Sync: " + currentdate.getDay() + "/" + currentdate.getMonth()
+        + "/" + currentdate.getFullYear() + " @ "
+        + currentdate.getHours() + ":"
+        + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+
+    var Ordre = {
         Dato: datetime,
-        Type: kjøp,
+        Type: true,
         Antall: $("#antall").val(),
         Aksje: aksje,
         Portofolje: portofolje
     };
 
-    $.get("Home/registrerOrdre", Order, function (registrert) {
-        if (registrert != null) {
-            //Det gikk ikke an å registrere
-        }
-        else {
-            //Feilmelding
-        }
+    $.get("Home/registrerOrdre", Ordre, function (registrert) {
+       // window.location.href("index.html");
     });
 }
 
 function hentPortofolje(id) {
-    const url = "Home/hentPortofolje?id=" + id
+    const url = "Home/hentPortefolje?id=" + id
     $.get(url, function (portofolje) {
         return portofolje;
     });
 }
 
-function hentAksje(id) {
-    const url = "Home/hentAksje?id=" + id
-    $.get(url, function (aksje) {
-        return aksje;
+function hentAksje(AID) {
+    const url = "Home/hentAksje?id="+AID
+    $.get(url, function (Aksje) {
+        return Aksje;
     });
 }
