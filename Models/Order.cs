@@ -8,6 +8,7 @@ namespace AksjeHandelWebApp.Models
         public int Id { get; set; }
         public string Dato { get; set; }
         public bool Type { get; set; }  //Kjp/salg
+        public int AntallAksjer { get; set; }
         public virtual Aksje Aksje { get; set; }
         public virtual Portofolje Portofolje { get; set; }
     }

@@ -11,7 +11,5 @@ namespace AksjeHandelWebApp.Models
         public string Etternavn  { get; set; }
         public string Telefon { get; set; }
         public string Email { get; set; }
-        [ForeignKey("Portefolje")]
-        public virtual Portofolje Portofolje { get; set; }
     }
 }

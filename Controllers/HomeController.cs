@@ -53,5 +53,9 @@ namespace AksjeHandelWebApp.Controllers
         {
             return await _db.sjekkPerson(email);
         }
+        public async Task<int> lagrePerson(Person innPerson)
+        {
+            return await _db.lagrePerson(innPerson);
+        }
     }
 }
