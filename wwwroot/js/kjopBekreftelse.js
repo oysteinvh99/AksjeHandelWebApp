@@ -30,7 +30,7 @@ function formatter(Aksje, antall,AID) {
 
 //Registrere ordre, kjøp
 function bekreftOrdre() {
-    var portofolje = hentPortofolje()//Legg inn brukerID  //Portofolje ID for å hente portofoljen
+    var portofolje = hentPortofolje(sessionsStorage.getItem("id"))  //Portofolje ID for å hente portofoljen
     var aksje = hentAksje($("#aksjenSinIDGjemt").val());
     //Hentet fra nettet, datetime
     var datetime = "Last Sync: " + currentdate.getDate() + "/"
