@@ -15,6 +15,7 @@ namespace AksjeHandelWebApp.DAL
         Task<Firma>hentFirma(int id);
         Task<bool>slettBruker(int id);
         Task<int> lagrePerson(Person innPerson);
+        Task<Aksje>hentAksje(int id);
     }
 }
 
