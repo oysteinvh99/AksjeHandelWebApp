@@ -9,10 +9,7 @@ namespace AksjeHandelWebApp.Models
         public float Verdi { get; set; }
         public virtual Firma Firma { get; set; }
        
-        
-
-
-
+       
     }
 }
 

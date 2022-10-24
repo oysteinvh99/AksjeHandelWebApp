@@ -159,6 +159,25 @@ namespace AksjeHandelWebApp.DAL
                 return false;
             }
         }
+        public async Task<Aksje> hentAksje(int id)
+        {
+            try
+            {
+                Aksje enAskje = await _db.Aksjer.FindAsync(id);
+                var hentetAksje = new Aksje()
+                {
+                    Id = enAskje.Id,
+                    Firma = enAskje.Firma,
+                    Verdi = enAskje.Verdi
+                    
+                };
+                return hentetAksje;
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }
 

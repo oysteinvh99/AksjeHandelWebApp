@@ -53,5 +53,9 @@ namespace AksjeHandelWebApp.Controllers
         {
             return await _db.sjekkPerson(email);
         }
+        public async Task<Aksje> hentAksje(int id)
+        {
+            return await _db.hentAksje(id);
+        }
     }
 }
