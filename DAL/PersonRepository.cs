@@ -26,7 +26,7 @@ namespace AksjeHandelWebApp.DAL
                 var hentetPortofolje = new Portofolje()
                 {
                     Id = enPortofolje.Id,
-                    person = enPortofolje.person
+                 //   person = enPortofolje.person
                 };
                 return enPortofolje;
             }
@@ -70,7 +70,7 @@ namespace AksjeHandelWebApp.DAL
                     Etternavn = enPerson.Etternavn,
                     Telefon = enPerson.Telefon,
                     Email = enPerson.Email,
-                    Portofolje = enPerson.Portofolje
+                  
                 };
                 return enPerson;
             }
@@ -91,6 +91,29 @@ namespace AksjeHandelWebApp.DAL
             {
                 return 0;
             }
+        }
+        public async Task<int>lagrePerson(Person innPerson)
+        {
+            try
+            {
+                var nyPerson = new Person();
+                nyPerson.Fornavn = innPerson.Fornavn;
+                nyPerson.Etternavn = innPerson.Etternavn;
+                nyPerson.Email = innPerson.Email;
+                nyPerson.Telefon = innPerson.Telefon;
+                var nyPortefolje = new Portofolje();
+                nyPortefolje.person = nyPerson;
+                _db.Portofoljer.Add(nyPortefolje);
+                _db.Personer.Add(innPerson);
+                await _db.SaveChangesAsync();
+                Person enPerson = _db.Personer.First(x => x.Email == innPerson.Email);
+                return enPerson.Id;
+            }
+            catch
+            {
+                return 0;
+            }
+
         }
 
         public async Task<bool> registrerOrder(Ordre innOrder)
@@ -148,9 +171,9 @@ namespace AksjeHandelWebApp.DAL
             try
             {
                 Person enPerson = await _db.Personer.FindAsync(id);
-                Portofolje portofolje = await _db.Portofoljer.FindAsync(enPerson.Portofolje.Id);
+              //  Portofolje portofolje = await _db.Portofoljer.FindAsync(enPerson.Portofolje.Id);
                 _db.Personer.Remove(enPerson);
-                _db.Portofoljer.Remove(portofolje);
+          //      _db.Portofoljer.Remove(portofolje);
                 await _db.SaveChangesAsync();
                 return true;
             }

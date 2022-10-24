@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "d2q48f4cPlro2rMNOyivwPZyYHUZdoIwvN00aUuj1b79ufhD/SItk152JE3UEJ3xyMLTVkaYtSPuZDwt6MG1eg==",
+  "dgSpecHash": "p6Emzqdrzo+7KwYFayPztdQ8zqXZa7yRoYQMhm5scfjFIICi9poTh/nU0YXZRBI7ETlHZ8KK57ruE41oPsUs9Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Willi\\Documents\\AksjeHandelWebApp\\AksjeHandelWebApp.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\Willi\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.4\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.4.nupkg.sha512",
     "C:\\Users\\Willi\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Willi\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
+    "C:\\Users\\Willi\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.0\\microsoft.codeanalysis.analyzers.3.3.0.nupkg.sha512",
     "C:\\Users\\Willi\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Willi\\.nuget\\packages\\microsoft.data.sqlite.core\\3.1.4\\microsoft.data.sqlite.core.3.1.4.nupkg.sha512",
     "C:\\Users\\Willi\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\3.1.4\\microsoft.dotnet.platformabstractions.3.1.4.nupkg.sha512",
@@ -123,5 +124,12 @@
     "C:\\Users\\Willi\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Willi\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Willi\\Documents\\AksjeHandelWebApp\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
