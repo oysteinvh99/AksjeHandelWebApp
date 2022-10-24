@@ -57,9 +57,17 @@
                 <div class="col-sm">
                     <h2>Logg inn her:</h2><br>
                     <form>
+<<<<<<< Updated upstream
                     <label for="email">Email: </label>
                     <input type="text" class="form-control" id="email" placeholder="Skriv inn Email.." style="width: 50%;" onchange="validerEmail(this.value)"/>
                     <span id="feilemail" style="color: red"></span><br>
+=======
+                    <div class="form-group">    
+                    <label for="email"> Epost: </label>
+                    <input type="text" onchange="validerEmail(this.value)" id="email" name="email" placeholder="Skriv inn Email.." style="width: 50%;"><br>
+                    <span id="feilemail" style="color: red"></span>
+                    </div>
+>>>>>>> Stashed changes
                     <a class='btn btn-primary' id="loggInn" onclick="loggInn()">Logg inn</a>
                     </form> 
                 </div>
