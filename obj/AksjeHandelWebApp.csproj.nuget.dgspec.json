@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Willi\\Documents\\AksjeHandelWebApp\\AksjeHandelWebApp.csproj": {}
+    "C:\\Users\\emilh\\Desktop\\GitHub\\AksjeHandelWebApp\\AksjeHandelWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Willi\\Documents\\AksjeHandelWebApp\\AksjeHandelWebApp.csproj": {
+    "C:\\Users\\emilh\\Desktop\\GitHub\\AksjeHandelWebApp\\AksjeHandelWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Willi\\Documents\\AksjeHandelWebApp\\AksjeHandelWebApp.csproj",
+        "projectUniqueName": "C:\\Users\\emilh\\Desktop\\GitHub\\AksjeHandelWebApp\\AksjeHandelWebApp.csproj",
         "projectName": "AksjeHandelWebApp",
-        "projectPath": "C:\\Users\\Willi\\Documents\\AksjeHandelWebApp\\AksjeHandelWebApp.csproj",
-        "packagesPath": "C:\\Users\\Willi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Willi\\Documents\\AksjeHandelWebApp\\obj\\",
+        "projectPath": "C:\\Users\\emilh\\Desktop\\GitHub\\AksjeHandelWebApp\\AksjeHandelWebApp.csproj",
+        "packagesPath": "C:\\Users\\emilh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\emilh\\Desktop\\GitHub\\AksjeHandelWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Willi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\emilh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
