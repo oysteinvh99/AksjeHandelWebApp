@@ -36,13 +36,17 @@
                     <h2>Registrer deg her som ny bruker:</h2> 
                     <form action="loggInn.html">
                         <label for="fornavn">Fornavn:</label><br>
-                        <input type="text" class="form-control" id="fornavn" name="fornavn" placeholder="Skriv inn Fornavn.." style="width: 35%;"><br>
+                        <input type="text" class="form-control" id="fornavn" placeholder="Skriv inn Fornavn.." style="width: 35%;" onchange="validerFornavn(this.value)">
+                        <span id="feilFornavn" style="color: red"></span><br>
                         <label for="etternavn">Etternavn:</label><br>
-                        <input type="text" class="form-control" id="etternavn" name="etternavn" placeholder="Skriv inn Etternavn.." style="width: 35%"><br>
+                        <input type="text" class="form-control" id="etternavn" placeholder="Skriv inn Etternavn.." style="width: 35%" onchange="validerEtternavn(this.value)">
+                        <span id="feilEtternavn" style="color: red"></span><br>
                         <label for="telefon">Telefon:</label><br>
-                        <input type="text" class="form-control" id="telefon" name="telefon" placeholder="Skriv inn Telefon.." style="width: 35%;"><br>
-                        <label for="email">Email:</label><br>
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Skriv inn Email.." style="width: 35%;"><br>
+                        <input type="text" class="form-control" id="telefon" placeholder="Skriv inn Telefon.." style="width: 35%;" onchange="validerTelefon(this.value)">
+                        <span id="feilTelefon" style="color: red"></span><br>
+                        <label for="email">Email: </label>
+                        <input type="text" class="form-control" id="email" placeholder="Skriv inn Email.."  style="width: 35%;" onchange="validerEmail(this.value)">
+                        <span id="feilEmail" style="color: red"></span><br>
                         <a class='btn btn-primary' id="registrer" onclick="lagrePerson()"> Registrering </a><br><br>
                         <a href="loggInn.html">Allerede registrert? trykk her for å gå tilbake</a>
                     </form> 

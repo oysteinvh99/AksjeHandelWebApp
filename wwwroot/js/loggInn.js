@@ -2,10 +2,10 @@
     const regexp = /^[a-zA-ZæøåÆØÅ. \-]{2,20}$/;
     const ok = regexp.test(email);
     if(!ok) {
-        $("#feilemail").html("Mailen må bestå av 2 til 20 bokstaver");
+        $("#feilEmail").html("Mailen må bestå av 2 til 20 bokstaver");
          return false;
     } else {
-        $("#feilemail").html("");
+        $("#feilEmail").html("");
     return true;
      }
     }
