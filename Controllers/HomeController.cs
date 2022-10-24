@@ -57,6 +57,11 @@ namespace AksjeHandelWebApp.Controllers
         {
             return await _db.lagrePerson(innPerson);
         }
+        
+          public async Task<Aksje> hentAksje(int id)
+        {
+            return await _db.hentAksje(id);
+        }
         //public async Task<List<VisPortefolje>>visPortefolje(int Id)
 
         //{
