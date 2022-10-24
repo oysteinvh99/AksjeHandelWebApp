@@ -23,10 +23,10 @@ function validerEtternavn(etternavn) {
     }
 
 function validerTelefon(telefon) {
-            const regexp = /^[a-zA-ZæøåÆØÅ. \-]{2,20}$/;
+            const regexp = /\d{8}$/;
             const ok = regexp.test(telefon);
             if(!ok) {
-            $("#feilTelefon").html("Telefon må bestå av 2 til 20 bokstaver");
+            $("#feilTelefon").html("Telefon må bestå av 8 siffer");
             return false;
             } else {
             $("#feilTelefon").html("");
@@ -35,10 +35,10 @@ function validerTelefon(telefon) {
     }
     
     function validerEmail(email) {
-        const regexp = /^[a-zA-ZæøåÆØÅ. \-]{2,20}$/;
+        const regexp = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
         const ok = regexp.test(email);
         if(!ok) {
-        $("#feilEmail").html("Email må bestå av 2 til 20 bokstaver");
+        $("#feilEmail").html("Email må bestå av bokstaver og alfakrøll");
         return false;
         } else {
         $("#feilEmail").html("");

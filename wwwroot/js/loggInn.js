@@ -1,8 +1,8 @@
 ﻿function validerEmail(email) {
-    const regexp = /^[a-zA-ZæøåÆØÅ. \-]{2,20}$/;
+    const regexp = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
     const ok = regexp.test(email);
     if(!ok) {
-        $("#feilEmail").html("Mailen må bestå av 2 til 20 bokstaver");
+        $("#feilEmail").html("Mailen må være skrevet i riktig format");
          return false;
     } else {
         $("#feilEmail").html("");
