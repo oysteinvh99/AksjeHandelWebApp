@@ -29,7 +29,6 @@ namespace AksjeHandelWebApp.Controllers
        
         }
         public async Task<Portofolje> hentPortofolje(int id)
-
         {
             return await _db.hentPortofolje(id);
                 
