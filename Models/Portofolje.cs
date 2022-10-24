@@ -9,7 +9,5 @@ namespace AksjeHandelWebApp.Models
         public int Id { get; set; }
         [ForeignKey("Person")]
         public virtual Person person { get; set; }
-
-
     }
 }

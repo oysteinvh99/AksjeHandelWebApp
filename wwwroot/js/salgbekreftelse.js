@@ -9,14 +9,23 @@
 
 //AID er AksjeID og antall er antallet akssjer
 function hent(AID, antall) {
-    const url = "Home/hentAksje?id="+AID
+    const url = "Home/hentAksje?id=" + AID
     $.get(url, function (Aksje) {
-        formatter(Aksje, antall,AID);
+        formatter(Aksje, antall, AID);
     });
 }
 
 
-function formatter(Aksje, antall,AID) {
+function formatter(Aksje, antall, AID) {
+    var portofolje = hentPortofolje()//Legg inn brukerID  //Portofolje ID for å hente portofoljen
+    for (let aksje of portofolje.aksjer) {
+        if (aksje.id == AID) {
+            if (aksje.antall < antall) {
+                //Du kan ikke selge aksjen, du har ikke nok aksjer
+            }
+        }
+    }
+
     var totalPris = 0;
     var antallet = 0;
     antallet = parseInt(antall);
@@ -28,9 +37,19 @@ function formatter(Aksje, antall,AID) {
     $("#aksjenSinIDGjemt").html(AID)
 }
 
-//Registrere ordre, kjøp
+//Bekreft salg av aksjer
 function bekreftOrdre() {
-    var portofolje = hentPortofolje()//Legg inn brukerID  //Portofolje ID for å hente portofoljen
+    var portofolje = hentPortofolje(id)//Legg inn brukerID  //Portofolje ID for å hente portofoljen
+
+    for (let aksje of portofolje.aksjer) {
+        if (aksje.id == AID) {
+            if (aksje.antall < antall) {
+                //Du kan ikke selge aksjen, du har ikke nok aksjer
+                return;
+            }
+        }
+    }
+
     var aksje = hentAksje($("#aksjenSinIDGjemt").val());
     //Hentet fra nettet, datetime
     var datetime = "Last Sync: " + currentdate.getDate() + "/"
@@ -42,7 +61,7 @@ function bekreftOrdre() {
 
     var Order = {
         Dato: datetime,
-        Type: kjøp,
+        Type: salg,
         Antall: $("#antall").val(),
         Aksje: aksje,
         Portofolje: portofolje
@@ -58,13 +77,16 @@ function bekreftOrdre() {
     });
 }
 
+//Henter portofoljen
 function hentPortofolje(id) {
     const url = "Home/hentPortofolje?id=" + id
     $.get(url, function (portofolje) {
         return portofolje;
     });
-}
+    return portofolje;
+};
 
+//Henter aksjen
 function hentAksje(id) {
     const url = "Home/hentAksje?id=" + id
     $.get(url, function (aksje) {
