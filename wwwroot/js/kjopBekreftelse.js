@@ -40,10 +40,11 @@ function bekreftOrdre() {
 
     //Hentet fra nettet, datetime
     var currentdate = new Date();
-    var datetime = "Last Sync: " + currentdate.getDay() + "/" + currentdate.getMonth()
-        + "/" + currentdate.getFullYear() + " @ "
+    var datetime = currentdate.getDay() + "/" + currentdate.getMonth()
+        + "/" + currentdate.getFullYear() + "  "
         + currentdate.getHours() + ":"
         + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+    console.log(datetime)
 
     var Ordre = {
         Dato: datetime,
@@ -54,7 +55,11 @@ function bekreftOrdre() {
     };
 
     $.get("Home/registrerOrdre", Ordre, function (registrert) {
-       // window.location.href("index.html");
+        if (registrert) {
+            window.location.href("index.html");
+        } else {
+            //Noe gikk feil
+        }
     });
 }
 

@@ -31,7 +31,7 @@ function formatter(Aksje, antall, AID) {
     antallet = parseInt(antall);
     totalPris = Aksje.verdi * antallet;
     $("#info").html("Pris pr. Aksje: " + Aksje.verdi + " og antall aksjer:" + antallet);
-    $("#totalpris").html("Totalpris:" + totalPris);
+    $("#totalpris").html("Total salgspris:" + totalPris);
     $("#antall").html(antallet);
     $("#firmanavn").html("Navnet på firma:" + Aksje.firma.navn);
     $("#aksjenSinIDGjemt").html(AID)
@@ -45,6 +45,7 @@ function bekreftOrdre() {
         if (aksje.id == AID) {
             if (aksje.antall < antall) {
                 //Du kan ikke selge aksjen, du har ikke nok aksjer
+                console.log("Ulovlig action")
                 return;
             }
         }
@@ -57,6 +58,7 @@ function bekreftOrdre() {
         + currentdate.getFullYear() + " @ "
         + currentdate.getHours() + ":"
         + currentdate.getMinutes() + ":";
+
     console.log(datetime);
 
     var Order = {
