@@ -41,7 +41,7 @@ function formatter(Aksje, antall, AID) {
 function bekreftOrdre() {
     var portofolje = hentPortofolje(id)//Legg inn brukerID  //Portofolje ID for å hente portofoljen
 
-    for (let aksje of portofolje.aksjer) {
+    for (let aksje of portofolje.aksjer ) { //Portofolje.aksjer er ikke kodet pr. dags dato.
         if (aksje.id == AID) {
             if (aksje.antall < antall) {
                 //Du kan ikke selge aksjen, du har ikke nok aksjer
@@ -81,11 +81,10 @@ function bekreftOrdre() {
 
 //Henter portofoljen
 function hentPortofolje(id) {
-    const url = "Home/hentPortofolje?id=" + id
+    const url = "Home/hentPortefolje?id=" + id
     $.get(url, function (portofolje) {
         return portofolje;
     });
-    return portofolje;
 };
 
 //Henter aksjen
