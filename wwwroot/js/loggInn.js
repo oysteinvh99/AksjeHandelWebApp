@@ -5,7 +5,7 @@
     $.get(url, function (id) {
         if (id != 0) {
             sessionStorage.setItem("id", id);
-            window.location.href = 'index.html
+            window.location.href = 'index.html'
         }
         else {
             window.location.href = 'registrerBruker.html'
