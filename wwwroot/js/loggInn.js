@@ -5,12 +5,7 @@
     $.get(url, function (id) {
         if (id != 0) {
             sessionStorage.setItem("id", id);
-<<<<<<< Updated upstream
             window.location.href = 'index.html
-=======
-            window.location.href = 'aksjehandel.html
-            
->>>>>>> Stashed changes
         }
         else {
             window.location.href = 'registrerBruker.html'

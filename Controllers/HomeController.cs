@@ -53,15 +53,9 @@ namespace AksjeHandelWebApp.Controllers
         {
             return await _db.sjekkPerson(email);
         }
-<<<<<<< Updated upstream
         public async Task<int> lagrePerson(Person innPerson)
         {
             return await _db.lagrePerson(innPerson);
-=======
-        public async Task<int> registrerBruker(Person innPerson)
-        {
-            return await _db.registrerBruker(innPerson);
->>>>>>> Stashed changes
         }
     }
 }

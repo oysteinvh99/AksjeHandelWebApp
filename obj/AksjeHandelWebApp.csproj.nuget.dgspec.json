@@ -46,11 +46,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-<<<<<<< Updated upstream
               "version": "[3.3.0, )"
-=======
-              "version": "[3.3.2, )"
->>>>>>> Stashed changes
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

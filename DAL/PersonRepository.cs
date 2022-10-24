@@ -26,11 +26,7 @@ namespace AksjeHandelWebApp.DAL
                 var hentetPortofolje = new Portofolje()
                 {
                     Id = enPortofolje.Id,
-<<<<<<< Updated upstream
                  //   person = enPortofolje.person
-=======
-                    // person = enPortofolje.person
->>>>>>> Stashed changes
                 };
                 return enPortofolje;
             }
@@ -96,11 +92,7 @@ namespace AksjeHandelWebApp.DAL
                 return 0;
             }
         }
-<<<<<<< Updated upstream
         public async Task<int>lagrePerson(Person innPerson)
-=======
-        public async Task<int> registrerBruker(Person innPerson)
->>>>>>> Stashed changes
         {
             try
             {
@@ -109,7 +101,6 @@ namespace AksjeHandelWebApp.DAL
                 nyPerson.Etternavn = innPerson.Etternavn;
                 nyPerson.Email = innPerson.Email;
                 nyPerson.Telefon = innPerson.Telefon;
-<<<<<<< Updated upstream
                 var nyPortefolje = new Portofolje();
                 nyPortefolje.person = nyPerson;
                 _db.Portofoljer.Add(nyPortefolje);
@@ -117,33 +108,12 @@ namespace AksjeHandelWebApp.DAL
                 await _db.SaveChangesAsync();
                 Person enPerson = _db.Personer.First(x => x.Email == innPerson.Email);
                 return enPerson.Id;
-=======
-
-                var nyPortefølje = new Portofolje();
-                nyPerson.Portofolje = nyPortefølje;
-                _db.Portofoljer.Add(nyPortefølje);
-                _db.Personer.Add(nyPerson);
-                
-                
-                await _db.SaveChangesAsync();
-                Person enPerson = _db.Personer.First(x => x.Email == innPerson.Email);
-                return enPerson.Id;
-
-
-
-
->>>>>>> Stashed changes
             }
             catch
             {
                 return 0;
-<<<<<<< Updated upstream
             }
 
-=======
-
-            }
->>>>>>> Stashed changes
         }
 
         public async Task<bool> registrerOrder(Ordre innOrder)
@@ -152,6 +122,7 @@ namespace AksjeHandelWebApp.DAL
             {
                 var nyOrder = new Ordre();
                 nyOrder.Dato = innOrder.Dato;
+                nyOrder.Id = innOrder.Id;
 
                 var sjekkPortofolje = await _db.Portofoljer.FindAsync(innOrder.Portofolje);
                 var sjekkAksje = await _db.Aksjer.FindAsync(innOrder.Aksje);

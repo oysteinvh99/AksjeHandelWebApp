@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< Updated upstream
   "dgSpecHash": "4OeBxv3qe2pUhID+Z6vF5S1HZOajgyrPpJXp+5pgsKU8RX9KjTvHLkH4kitYAnMtaGpYrczhvcMSMJYZNFoV/g==",
-=======
-  "dgSpecHash": "tpHP6AJSTJiwI6sfGYO+5S9VJ/yIBJQYxTcgkqyA1as0LsKnb1tboJKJ9sl5Q85JGH2GD/KuAPykk/Xa0ntNwQ==",
->>>>>>> Stashed changes
   "success": true,
   "projectFilePath": "/Users/oysteinhetland/Projects/AksjeHandelWebApp/AksjeHandelWebApp/AksjeHandelWebApp.csproj",
   "expectedPackageFiles": [
@@ -13,11 +9,7 @@
     "/Users/oysteinhetland/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/3.1.4/microsoft.aspnetcore.mvc.newtonsoftjson.3.1.4.nupkg.sha512",
     "/Users/oysteinhetland/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/Users/oysteinhetland/.nuget/packages/microsoft.bcl.hashcode/1.1.0/microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
-<<<<<<< Updated upstream
     "/Users/oysteinhetland/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.0/microsoft.codeanalysis.analyzers.3.3.0.nupkg.sha512",
-=======
-    "/Users/oysteinhetland/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.2/microsoft.codeanalysis.analyzers.3.3.2.nupkg.sha512",
->>>>>>> Stashed changes
     "/Users/oysteinhetland/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/oysteinhetland/.nuget/packages/microsoft.data.sqlite.core/3.1.4/microsoft.data.sqlite.core.3.1.4.nupkg.sha512",
     "/Users/oysteinhetland/.nuget/packages/microsoft.dotnet.platformabstractions/3.1.4/microsoft.dotnet.platformabstractions.3.1.4.nupkg.sha512",
