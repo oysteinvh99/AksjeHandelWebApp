@@ -17,77 +17,54 @@ function hent(AID, antall) {
 
 
 function formatter(Aksje, antall, AID) {
-    var portofolje = hentPortofolje()           //Legg inn brukerID  //Portofolje ID for å hente portofoljen
-    for (let aksje of portofolje.aksjer) {
-        if (aksje.id == AID) {
-            if (aksje.antall < antall) {
-                                                 //Du kan ikke selge aksjen, du har ikke nok aksjer
-            }
-        }
-    }
-
     var totalPris = 0;
     var antallet = 0;
     antallet = parseInt(antall);
     totalPris = Aksje.verdi * antallet;
-    $("#info").html("Pris pr. Aksje: " + Aksje.verdi + " og antall aksjer:" + antallet);
-    $("#totalpris").html("Total salgspris:" + totalPris);
+    $("#info").html("Du kjøper " + antallet + ". " + Aksje.firma.navn + " aksjer " + "(" + Aksje.verdi + " pr. aksje)");
+    $("#totalPris").html("Totalpris: " + totalPris + " kr.");
     $("#antall").html(antallet);
-    $("#firmanavn").html("Navnet på firma:" + Aksje.firma.navn);
     $("#aksjenSinIDGjemt").html(AID)
 }
 
-//Bekreft salg av aksjer
+//Registrere ordre, kjøp
 function bekreftOrdre() {
-    var portofolje = hentPortofolje(id)//Legg inn brukerID  //Portofolje ID for å hente portofoljen
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+    const AID = params.id;
+    var antall = 0;
+    antall = parseInt(params.antall);
 
-    for (let aksje of portofolje.aksjer) {              //Portofolje.aksjer er ikke kodet pr. dags dato.
-        if (aksje.id == AID) {
-            if (aksje.antall < antall) {
-                //Du kan ikke selge aksjen, du har ikke nok aksjer
-                console.log("Ulovlig action")
-                return;
-            }
-        }
-    }
+    console.log(AID);
 
-    //Henter aksjen
-    function hentAksje(id) {
-        const url = "Home/hentAksje?id=" + id
-        $.get(url, function (aksje) {
-                                            //Hentet fra nettet, datetime
-                                             //Henter portofoljen
-            function hentPortofolje(id) {
-                const url = "Home/hentPortefolje?id=" + id
-                $.get(url, function (portofolje) {
+    const url = "Home/hentAksje?id=" + AID;
+    $.get(url, function (Aksjen) {
+        const url = "Home/hentPortefolje?id=" + sessionStorage.getItem("id");
+        $.post(url, function (portefolje) {
+            //Hentet fra nettet, datetime
+            var currentdate = new Date();
+            var datetime = currentdate.getDay() + "/" + currentdate.getMonth()
+                + "/" + currentdate.getFullYear() + "  "
+                + currentdate.getHours() + ":"
+                + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+            console.log(datetime)
 
-                    var datetime = "Last Sync: " + currentdate.getDate() + "/"
-                        + (currentdate.getMonth() + 1) + "/"
-                        + currentdate.getFullYear() + " @ "
-                        + currentdate.getHours() + ":"
-                        + currentdate.getMinutes() + ":";
+            console.log("antall:" + antall + " AID:" + AID + "Aksjen.ID: " + Aksjen.id)
+            var Ordre = {
+                Dato: datetime,
+                Type: false,
+                AntallAksjer: antall,
+                Aksje: Aksjen,
+                Portefolje: portefolje
+            };
 
-                    console.log(datetime);
-
-                    var Order = {
-                        Dato: datetime,
-                        Type: false,
-                        AntallAksjer: parseInt($("#antall").val()),
-                        Aksje: aksje,
-                        Portofolje: portofolje
-                    };
-
-                    $.post("Home/registrerOrdre", Order, function (registrert) {
-                        if (registrert != null) {
-                            
-                            
-                        }
-                        else {
-                            //Feilmelding
-                        }
-                    });
-                });
-            }
+            $.post("Home/registrerOrdre", Ordre, function (registrert) {
+                if (registrert) {
+                    window.location.href = 'aksjehandel.html';
+                } else {
+                    //Noe gikk feil
+                }
+            });
         });
-    }
+    });
 }
