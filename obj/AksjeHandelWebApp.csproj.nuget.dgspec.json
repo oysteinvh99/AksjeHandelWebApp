@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emilh\\Desktop\\GitHub\\AksjeHandelWebApp\\AksjeHandelWebApp.csproj": {}
+    "/Users/oysteinhetland/Projects/AksjeHandelWebApp/AksjeHandelWebApp/AksjeHandelWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emilh\\Desktop\\GitHub\\AksjeHandelWebApp\\AksjeHandelWebApp.csproj": {
+    "/Users/oysteinhetland/Projects/AksjeHandelWebApp/AksjeHandelWebApp/AksjeHandelWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emilh\\Desktop\\GitHub\\AksjeHandelWebApp\\AksjeHandelWebApp.csproj",
+        "projectUniqueName": "/Users/oysteinhetland/Projects/AksjeHandelWebApp/AksjeHandelWebApp/AksjeHandelWebApp.csproj",
         "projectName": "AksjeHandelWebApp",
-        "projectPath": "C:\\Users\\emilh\\Desktop\\GitHub\\AksjeHandelWebApp\\AksjeHandelWebApp.csproj",
-        "packagesPath": "C:\\Users\\emilh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emilh\\Desktop\\GitHub\\AksjeHandelWebApp\\obj\\",
+        "projectPath": "/Users/oysteinhetland/Projects/AksjeHandelWebApp/AksjeHandelWebApp/AksjeHandelWebApp.csproj",
+        "packagesPath": "/Users/oysteinhetland/.nuget/packages/",
+        "outputPath": "/Users/oysteinhetland/Projects/AksjeHandelWebApp/AksjeHandelWebApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\emilh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/oysteinhetland/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -48,7 +46,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.3.0, )"
+              "version": "[3.3.3, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -82,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.400/RuntimeIdentifierGraph.json"
         }
       }
     }

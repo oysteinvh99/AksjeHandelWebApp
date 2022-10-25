@@ -32,7 +32,7 @@
                                 <a href="aksjehandel.html">Aksjehandel</a>
                             </li>
                             <li class="nav-item">
-                                <a href="portofølje.html">Portofølje</a>
+                                <a href="minSide.html">Min Side</a>
                             </li>
                             <li class="nav-item">
                                 <a href="omOss.html">Om Oss</a>
@@ -57,9 +57,8 @@
                 <div class="col-sm">
                     <h2>Logg inn her:</h2><br>
                     <form>
-                    <label for="email">Email: </label>
-                    <input type="email" class="form-control" id="email" placeholder="Skriv inn Email.." style="width: 50%;" onchange="validerEmail(this.value)"/>
-                    <span id="feilEmail" style="color: red"></span><br>
+                    <label for="email">Epost: </label>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Skriv inn Email.." style="width: 50%;"><br>
                     <a class='btn btn-primary' id="loggInn" onclick="loggInn()">Logg inn</a>
                     </form> 
                 </div>
@@ -68,8 +67,6 @@
                     <h2>Ny bruker? Registrer deg her:</h2> <br>
                     <a href="registrerBruker.html" class='btn btn-primary' id="registrering">Registrer deg her</a>
                     </form>
-                    <img id="logobildet" href="#" src="img/registrerduden.png" alt="Logoen" width="60%" height="70%">
-
                 </div>
             </div>
         </div>    
