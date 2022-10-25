@@ -9,7 +9,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.4" />
    
-    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.3">
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
@@ -19,8 +19,6 @@
     <None Remove="Person.db-shm" />
     <None Remove="DAL\" />
     <None Remove="Microsoft.CodeAnalysis.Analyzers" />
-    <None Remove="Person.db-shm" />
-    <None Remove="Person.db-wal" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\" />
