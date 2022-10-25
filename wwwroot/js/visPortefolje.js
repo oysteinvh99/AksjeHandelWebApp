@@ -4,7 +4,7 @@
 
 function hentAlleAksjene() {
     const url = "Home/visPortefolje?id=" + sessionStorage.getItem("id");
-    $.get(url, function (visPortefolje) {
+    $.post(url, function (visPortefolje) {
         formaterAksjer(visPortefolje)
 
     });
