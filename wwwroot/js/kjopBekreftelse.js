@@ -26,6 +26,9 @@ function formatter(Aksje, antall,AID) {
     $("#antall").html(antallet);
     $("#aksjenSinIDGjemt").html(AID)
 }
+function ikkeGodkjenn() {
+    window.location.href = 'aksjehandel.html';
+}
 
 //Registrere ordre, kjøp
 function bekreftOrdre() {

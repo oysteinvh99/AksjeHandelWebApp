@@ -21,10 +21,14 @@ function formatter(Aksje, antall, AID) {
     var antallet = 0;
     antallet = parseInt(antall);
     totalPris = Aksje.verdi * antallet;
-    $("#info").html("Du kjøper " + antallet + ". " + Aksje.firma.navn + " aksjer " + "(" + Aksje.verdi + " pr. aksje)");
+    $("#info").html("Du selger " + antallet + ". " + Aksje.firma.navn + " aksjer " + "(" + Aksje.verdi + " pr. aksje)");
     $("#totalPris").html("Totalpris: " + totalPris + " kr.");
     $("#antall").html(antallet);
     $("#aksjenSinIDGjemt").html(AID)
+}
+
+function ikkeGodkjenn() {
+    window.location.href = 'aksjehandel.html';
 }
 
 //Registrere ordre, kjøp
