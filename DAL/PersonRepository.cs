@@ -5,8 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Text;
-using System.Text.RegularExpressions;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace AksjeHandelWebApp.DAL
 {
@@ -20,17 +18,17 @@ namespace AksjeHandelWebApp.DAL
             _db = db;
         }
 
-        public async Task<Portefolje> hentPortefolje(int id)
+        public async Task<Portofolje> hentPortofolje(int id)
         {
             try
             {
-                Portefolje enPortefolje = await _db.Portefoljer.FindAsync(id);
-                var hentetPortefolje = new Portefolje()
+                Portofolje enPortofolje = await _db.Portofoljer.FindAsync(id);
+                var hentetPortofolje = new Portofolje()
                 {
-                    Id = enPortefolje.Id,
-                    //   person = enportefolje.person
+                    Id = enPortofolje.Id,
+                 //   person = enPortofolje.person
                 };
-                return enPortefolje;
+                return enPortofolje;
             }
             catch
             {
@@ -65,14 +63,14 @@ namespace AksjeHandelWebApp.DAL
             try
             {
                 Person enPerson = await _db.Personer.FindAsync(id);
-                var hentetportefolje = new Person()
+                var hentetPortofolje = new Person()
                 {
                     Id = enPerson.Id,
                     Fornavn = enPerson.Fornavn,
                     Etternavn = enPerson.Etternavn,
                     Telefon = enPerson.Telefon,
                     Email = enPerson.Email,
-
+                  
                 };
                 return enPerson;
             }
@@ -94,7 +92,7 @@ namespace AksjeHandelWebApp.DAL
                 return 0;
             }
         }
-        public async Task<int> lagrePerson(Person innPerson)
+        public async Task<int>lagrePerson(Person innPerson)
         {
             try
             {
@@ -103,9 +101,9 @@ namespace AksjeHandelWebApp.DAL
                 nyPerson.Etternavn = innPerson.Etternavn;
                 nyPerson.Email = innPerson.Email;
                 nyPerson.Telefon = innPerson.Telefon;
-                var nyPortefolje = new Portefolje();
-                nyPortefolje.Person = nyPerson;
-                _db.Portefoljer.Add(nyPortefolje);
+                var nyPortefolje = new Portofolje();
+                nyPortefolje.person = nyPerson;
+                _db.Portofoljer.Add(nyPortefolje);
                 _db.Personer.Add(innPerson);
                 await _db.SaveChangesAsync();
                 Person enPerson = _db.Personer.First(x => x.Email == innPerson.Email);
@@ -118,17 +116,28 @@ namespace AksjeHandelWebApp.DAL
 
         }
 
-        public async Task<bool> registrerOrdre(Ordre innOrdre)
+        public async Task<bool> registrerOrder(Ordre innOrder)
         {
             try
             {
-               
-                
-                _db.Ordre.Add(innOrdre);
-                await _db.SaveChangesAsync();
+                var nyOrder = new Ordre();
+                nyOrder.Dato = innOrder.Dato;
+                nyOrder.Id = innOrder.Id;
 
-                return true;
-
+                var sjekkPortofolje = await _db.Portofoljer.FindAsync(innOrder.Portofolje);
+                var sjekkAksje = await _db.Aksjer.FindAsync(innOrder.Aksje);
+                if (sjekkPortofolje == null || sjekkAksje == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    nyOrder.Portofolje = innOrder.Portofolje;
+                    nyOrder.Aksje = innOrder.Aksje;
+                    _db.Ordre.Add(nyOrder);
+                    await _db.SaveChangesAsync();
+                    return true;
+                }
 
             }
             catch
@@ -162,9 +171,9 @@ namespace AksjeHandelWebApp.DAL
             try
             {
                 Person enPerson = await _db.Personer.FindAsync(id);
-                //  portefolje portefolje = await _db.portefoljer.FindAsync(enPerson.portefolje.Id);
+              //  Portofolje portofolje = await _db.Portofoljer.FindAsync(enPerson.Portofolje.Id);
                 _db.Personer.Remove(enPerson);
-                //      _db.portefoljer.Remove(portefolje);
+          //      _db.Portofoljer.Remove(portofolje);
                 await _db.SaveChangesAsync();
                 return true;
             }
@@ -173,92 +182,8 @@ namespace AksjeHandelWebApp.DAL
                 return false;
             }
         }
-
-        public async Task<Aksje> hentAksje(int id)
-        {
-            try
-            {
-                Aksje enAskje = await _db.Aksjer.FindAsync(id);
-                return enAskje;
-            }
-            catch
-            {
-                return null;
-            }
-        }
-        public async Task<List<VisPortefolje>> visPortefolje(int id)
-        {
-            try
-            {
-                List<VisPortefolje> nyVisning = new List<VisPortefolje>();
-                Portefolje enPortefolje = _db.Portefoljer.First(x => x.Person.Id == id);
-                bool sjekk = false;
-                foreach (Ordre s in enPortefolje.Ordre)
-                {
-                    foreach (VisPortefolje enport in nyVisning)
-                    {
-                        if (enport.Aksje.Id == s.Aksje.Id)
-                        {
-                            sjekk = true;
-                            if (s.Type)
-                            {
-                                enport.Antall = enport.Antall + s.AntallAksjer;
-                            }
-                            else
-                            {
-                                enport.Antall = enport.Antall - s.AntallAksjer;
-                            }
-
-
-                        }
-
-
-                    }
-                    if (sjekk == false)
-                    {
-                        var NyLinje = new VisPortefolje();
-                        NyLinje.Aksje = s.Aksje;
-                        if (s.Type)
-                        {
-                            NyLinje.Antall = s.AntallAksjer;
-                        }
-                        else
-                        {
-                            NyLinje.Antall = 0 - s.AntallAksjer;
-
-                        }
-                        nyVisning.Add(NyLinje);
-
-                    }
-                    sjekk = false;
-
-
-                }
-                foreach (VisPortefolje enport in nyVisning)
-                {
-                    enport.Verdi = enport.Antall * enport.Aksje.Verdi;
-                }
-                    return nyVisning;
-                
-            }
-
-
-
-
-
-
-            catch
-            {
-                return null;
-
-
-            }
-        }
     }
 }
-    
-
-
 
     
 

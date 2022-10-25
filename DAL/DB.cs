@@ -15,7 +15,7 @@ namespace AksjeHandelWebApp.Models
 
         public virtual DbSet<Firma> Firmaer { get; set; }
 
-        public virtual DbSet<Portefolje> Portefoljer { get; set; }
+        public virtual DbSet<Portofolje> Portofoljer { get; set; }
 
         public virtual DbSet<Ordre> Ordre { get; set; }
 

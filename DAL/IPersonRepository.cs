@@ -9,14 +9,12 @@ namespace AksjeHandelWebApp.DAL
     {
         Task<Person> hentPerson(int id);
         Task<List<Aksje>> hentAksjer();
-        Task<Portefolje> hentPortefolje(int id);
+        Task <Portofolje> hentPortofolje(int id);
         Task<int> sjekkPerson(string email);
-        Task<bool>registrerOrdre(Ordre innOrdre);
+        Task<bool>registrerOrder(Ordre innOrder);
         Task<Firma>hentFirma(int id);
         Task<bool>slettBruker(int id);
         Task<int> lagrePerson(Person innPerson);
-        Task<Aksje>hentAksje(int id);
-        Task<List<VisPortefolje>> visPortefolje(int id);
     }
 }
 
