@@ -27,54 +27,42 @@ function formatter(Aksje, antall,AID) {
     $("#aksjenSinIDGjemt").html(AID)
 }
 
-    //Registrere ordre, kjøp
+//Registrere ordre, kjøp
 function bekreftOrdre() {
     const urlSearchParams = new URLSearchParams(window.location.search);
     const params = Object.fromEntries(urlSearchParams.entries());
     const AID = params.id;
+    var antall = 0;
+    antall = parseInt(params.antall);
 
     console.log(AID);
 
     var portofolje = hentPortofolje(1); //Portofolje ID for å hente portofoljen
-    var aksje = hentAksje(AID);
+    const url = "Home/hentAksje?id=" + AID
+    $.get(url, function (Aksjen) {
+        //Hentet fra nettet, datetime
+        var currentdate = new Date();
+        var datetime = currentdate.getDay() + "/" + currentdate.getMonth()
+            + "/" + currentdate.getFullYear() + "  "
+            + currentdate.getHours() + ":"
+            + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+        console.log(datetime)
 
-    //Hentet fra nettet, datetime
-    var currentdate = new Date();
-    var datetime = currentdate.getDay() + "/" + currentdate.getMonth()
-        + "/" + currentdate.getFullYear() + "  "
-        + currentdate.getHours() + ":"
-        + currentdate.getMinutes() + ":" + currentdate.getSeconds();
-    console.log(datetime)
- 
+        console.log("antall:" + antall + " AID:" + AID + "Aksjen.ID: "+ Aksjen.id)
+        var Ordre = {
+            Dato: datetime,
+            Type: true,
+            AntallAksjer: antall,
+            Aksje: Aksjen
+        };
 
+        $.post("Home/registrerOrdre", Ordre, function (registrert) {
+            if (registrert) {
+                window.location.assign("")
+            } else {
+                //Noe gikk feil
+            }
+        });
 
-    var Ordre = {
-        Dato: datetime,
-        Type: true,
-        Antall: $("#antall").val()
-       
-        
-    };
-
-    $.get("Home/registrerOrdre", Ordre, function (registrert) {
-        if (registrert) {
-            window.location.href='index.html';
-        } else {
-            //Noe gikk feil
-        }
-    });
-}
-
-function hentPortofolje(id) {
-    const url = "Home/hentPortefolje?id=" + id
-    $.get(url, function (portofolje) {
-        return portofolje;
-    });
-}
-
-function hentAksje(AID) {
-    const url = "Home/hentAksje?id="+AID
-    $.get(url, function (Aksje) {
-        return Aksje;
     });
 }
