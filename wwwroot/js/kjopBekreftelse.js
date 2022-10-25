@@ -37,32 +37,34 @@ function bekreftOrdre() {
 
     console.log(AID);
 
-    var portofolje = hentPortofolje(1); //Portofolje ID for å hente portofoljen
-    const url = "Home/hentAksje?id=" + AID
+    const url = "Home/hentAksje?id=" + AID;
     $.get(url, function (Aksjen) {
-        //Hentet fra nettet, datetime
-        var currentdate = new Date();
-        var datetime = currentdate.getDay() + "/" + currentdate.getMonth()
-            + "/" + currentdate.getFullYear() + "  "
-            + currentdate.getHours() + ":"
-            + currentdate.getMinutes() + ":" + currentdate.getSeconds();
-        console.log(datetime)
+        const url = "Home/hentPortefolje?id=" + sessionStorage.getItem("id");
+        $.post(url, function (portefolje) {
+            //Hentet fra nettet, datetime
+            var currentdate = new Date();
+            var datetime = currentdate.getDay() + "/" + currentdate.getMonth()
+                + "/" + currentdate.getFullYear() + "  "
+                + currentdate.getHours() + ":"
+                + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+            console.log(datetime)
 
-        console.log("antall:" + antall + " AID:" + AID + "Aksjen.ID: "+ Aksjen.id)
-        var Ordre = {
-            Dato: datetime,
-            Type: true,
-            AntallAksjer: antall,
-            Aksje: Aksjen
-        };
+            console.log("antall:" + antall + " AID:" + AID + "Aksjen.ID: " + Aksjen.id)
+            var Ordre = {
+                Dato: datetime,
+                Type: true,
+                AntallAksjer: antall,
+                Aksje: Aksjen,
+                Portefolje: portefolje
+            };
 
-        $.post("Home/registrerOrdre", Ordre, function (registrert) {
-            if (registrert) {
-                window.location.assign("")
-            } else {
-                //Noe gikk feil
-            }
+            $.post("Home/registrerOrdre", Ordre, function (registrert) {
+                if (registrert) {
+                    window.location.assign("")
+                } else {
+                    //Noe gikk feil
+                }
+            });
         });
-
     });
 }
