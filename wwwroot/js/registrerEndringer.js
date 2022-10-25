@@ -19,3 +19,23 @@ function hentEnPerson() {
     }
 }
 
+function rediger() {
+    var person = {
+        fornavn: $("#fornavn").val(),
+        etternavn: $("#etternavn").val(),
+        email: $("#email").val(),
+        telefon: $("#telefon").val(),
+        id: sessionStorage.getItem("id")
+    }
+
+      
+    $.post("Home/Endre", person, function (OK) {
+        if (OK) {
+            window.location.href = 'minSide.html';
+        }
+        else {
+            $("#feil").html("Feil i db - prøv igjen senere");
+        }
+    });
+              }
+

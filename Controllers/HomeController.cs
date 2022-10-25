@@ -70,5 +70,9 @@ namespace AksjeHandelWebApp.Controllers
        
 
         }
+        public async Task<bool> Endre(Person innPerson)
+        {
+            return await _db.Endre(innPerson);
+        }
     }
 }

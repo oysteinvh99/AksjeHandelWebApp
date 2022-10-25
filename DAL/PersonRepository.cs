@@ -250,6 +250,23 @@ namespace AksjeHandelWebApp.DAL
 
             }
         }
+        public async Task<bool> Endre(Person innPerson)
+        {
+            try
+            {
+                var endreObjekt = await _db.Personer.FindAsync(innPerson.Id);
+                endreObjekt.Fornavn = innPerson.Fornavn;
+                endreObjekt.Etternavn = innPerson.Etternavn;
+                endreObjekt.Email = innPerson.Email;
+                endreObjekt.Telefon = innPerson.Telefon;
+                await _db.SaveChangesAsync();
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
     
