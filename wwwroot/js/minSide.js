@@ -18,3 +18,9 @@ function hentEnPerson() {
       
     }
 }
+
+function loggUt() {
+    sessionStorage.clear("id");
+    window.location.href = 'index.html';
+
+}

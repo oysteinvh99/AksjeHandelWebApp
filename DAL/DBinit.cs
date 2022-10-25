@@ -44,6 +44,13 @@ namespace AksjeHandelWebApp.Models
                     ForsteDagPaBors = "11.11.11",
                     Utbytte = true
                 };
+                var nyFirma2 = new Firma
+                {
+                    Navn = "Apple",
+                    ForsteDagPaBors = "11.11.11",
+                    Utbytte = true
+                };
+
 
 
                 var nyAksje = new Aksje
@@ -56,6 +63,11 @@ namespace AksjeHandelWebApp.Models
                 {
                     Verdi = 7,
                     Firma = nyFirma1
+                };
+                var nyAksje2 = new Aksje
+                {
+                    Verdi = 15,
+                    Firma = nyFirma2
                 };
 
                 var nyOrdre = new Ordre
@@ -101,8 +113,10 @@ namespace AksjeHandelWebApp.Models
                 context.Portefoljer.Add(nyPortefolje);
                 context.Firmaer.Add(nyFirma);
                 context.Firmaer.Add(nyFirma1);
+                context.Firmaer.Add(nyFirma2);
                 context.Aksjer.Add(nyAksje);
                 context.Aksjer.Add(nyAksje1);
+                context.Aksjer.Add(nyAksje2);
                 context.Ordre.Add(nyOrdre);
                 context.Ordre.Add(nyOrdre1);
                 context.Ordre.Add(nyOrdre2);

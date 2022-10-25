@@ -43,10 +43,20 @@ function bekreftOrdre() {
         for (let visning of visPortefolje) {
             if (parseInt(visning.antall) > antall && visning.aksje.id == AID) {
                 registrerOrdre();
+                sjekk = 1;
+            }
+            else if (parseInt(visning.antall) < antall && visning.aksje.id == AID) {
+                sjekk = 1;
+                forLite(visning);
+               
             }
            
 
         }
+        if (sjekk == 0) {
+            harIkke();
+        }
+      
        
      
     });
@@ -84,7 +94,14 @@ function bekreftOrdre() {
             });
         });
     }
-    $("#feil").html("Du har ikke så mange aksjer")
+    function forLite(visning) {
+        $("#feil").html("Du prøvde å kjøpe " + antall + " av " + visning.aksje.firma.navn+ ". I din portefølje har du " + visning.antall + " av aksjen");
+    }
+    function harIkke() {
+        $("#feil").html("Denne aksjen har du ikke i porteføljen din");
+
+
+    }
 
     
        
