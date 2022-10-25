@@ -74,5 +74,9 @@ namespace AksjeHandelWebApp.Controllers
         {
             return await _db.Endre(innPerson);
         }
+        public async Task<Portefolje> hentOrdre(int id)
+        {
+            return await _db.hentOrdre(id);
+        }
     }
 }

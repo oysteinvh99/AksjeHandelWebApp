@@ -24,3 +24,7 @@ function loggUt() {
     window.location.href = 'index.html';
 
 }
+function seOrdre() {
+    window.location.href = 'visOrdre.html';
+
+}

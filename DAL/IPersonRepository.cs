@@ -18,6 +18,7 @@ namespace AksjeHandelWebApp.DAL
         Task<Aksje>hentAksje(int id);
         Task<List<VisPortefolje>> visPortefolje(int id);
         Task<bool> Endre(Person innPerson);
+        Task<Portefolje> hentOrdre(int id);
     }
 }
 

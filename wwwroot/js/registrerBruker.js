@@ -25,7 +25,7 @@ function leggTilPerson(person) {
     $.post(url, person, function (OK) {
         if (OK) {
             sessionStorage.setItem("id", OK)
-            window.location.href = 'index.html'
+            window.location.href = 'indexLoggetInn.html'
         }
         else {
             $("#feil").html("Feil i db - prøv igjen senere");

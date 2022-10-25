@@ -268,6 +268,23 @@ namespace AksjeHandelWebApp.DAL
             }
             return true;
         }
+
+    public async Task<Portefolje> hentOrdre(int id)
+        {
+            try
+            {
+                Portefolje enPortefolje = _db.Portefoljer.Single(x => x.Person.Id.Equals(id));
+                return enPortefolje;
+
+
+
+            }
+            catch
+            {
+                return null;
+
+            }
+        }
     }
 }
     
