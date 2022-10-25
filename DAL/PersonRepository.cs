@@ -118,9 +118,10 @@ namespace AksjeHandelWebApp.DAL
         {
             try
             {
-               
-                
-                _db.Ordre.Add(innOrdre);
+                var nyeOrdre = new List<Ordre>();
+                nyeOrdre.Add(innOrdre);
+                Portefolje enPortefolje = await _db.Portefoljer.FindAsync(innOrdre.Portefolje.Id);
+                enPortefolje.Ordre = nyeOrdre;
                 await _db.SaveChangesAsync();
 
                 return true;

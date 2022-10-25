@@ -17,11 +17,11 @@ function hent(AID, antall) {
 
 
 function formatter(Aksje, antall, AID) {
-    var portofolje = hentPortofolje()//Legg inn brukerID  //Portofolje ID for å hente portofoljen
+    var portofolje = hentPortofolje()           //Legg inn brukerID  //Portofolje ID for å hente portofoljen
     for (let aksje of portofolje.aksjer) {
         if (aksje.id == AID) {
             if (aksje.antall < antall) {
-                //Du kan ikke selge aksjen, du har ikke nok aksjer
+                                                 //Du kan ikke selge aksjen, du har ikke nok aksjer
             }
         }
     }
@@ -41,7 +41,7 @@ function formatter(Aksje, antall, AID) {
 function bekreftOrdre() {
     var portofolje = hentPortofolje(id)//Legg inn brukerID  //Portofolje ID for å hente portofoljen
 
-    for (let aksje of portofolje.aksjer) { //Portofolje.aksjer er ikke kodet pr. dags dato.
+    for (let aksje of portofolje.aksjer) {              //Portofolje.aksjer er ikke kodet pr. dags dato.
         if (aksje.id == AID) {
             if (aksje.antall < antall) {
                 //Du kan ikke selge aksjen, du har ikke nok aksjer
@@ -55,8 +55,8 @@ function bekreftOrdre() {
     function hentAksje(id) {
         const url = "Home/hentAksje?id=" + id
         $.get(url, function (aksje) {
-            //Hentet fra nettet, datetime
-            //Henter portofoljen
+                                            //Hentet fra nettet, datetime
+                                             //Henter portofoljen
             function hentPortofolje(id) {
                 const url = "Home/hentPortefolje?id=" + id
                 $.get(url, function (portofolje) {
@@ -77,9 +77,10 @@ function bekreftOrdre() {
                         Portofolje: portofolje
                     };
 
-                    $.get("Home/registrerOrdre", Order, function (registrert) {
+                    $.post("Home/registrerOrdre", Order, function (registrert) {
                         if (registrert != null) {
-                            //Det gikk ikke an å registrere
+                            
+                            
                         }
                         else {
                             //Feilmelding

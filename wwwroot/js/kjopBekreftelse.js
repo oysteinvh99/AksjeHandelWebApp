@@ -60,7 +60,7 @@ function bekreftOrdre() {
 
             $.post("Home/registrerOrdre", Ordre, function (registrert) {
                 if (registrert) {
-                    window.location.assign("")
+                    window.location.href = 'aksjehandel.html';
                 } else {
                     //Noe gikk feil
                 }
