@@ -62,14 +62,13 @@ namespace AksjeHandelWebApp.Controllers
         {
             return await _db.hentAksje(id);
         }
-        //public async Task<List<VisPortefolje>>visPortefolje(int Id)
+       public async Task<List<VisPortefolje>>visPortefolje(int Id)
 
-        //{
-        //    try
-        //    {
-        //        int portId=_db.Porte
-        //    }
+        {
+            return await _db.visPortefolje(Id);
+            
+       
 
-        //}
+        }
     }
 }

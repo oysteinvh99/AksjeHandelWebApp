@@ -3,21 +3,22 @@
 });
 
 function hentAlleAksjene() {
-    $.get("Home/hentPortefoljeAksjer", function (Aksjer) {
-        formaterAksjer(Aksjer);
-    });
-}
+    const url = "Home/visPortefolje?id=" + sessionStorage.getItem("id");
+    $.get(url, function (nyVisning)) {
+        f
 
-function formaterAksjer(Aksjer) {
+    });
+
+function formaterAksjer(nyVisning) {
     let ut = "<table class='table table-striped'>" +
         "<tr>" +
-        "<th>Navn</th><th>Pris</th><th>Antall</th><th>Kjøp</th>" +
+        "<th>Navn</th><th>Antall</th><th>Verdi</th>" +
         "</tr>";
-    for (let aksje of Aksjer) {
+    for (let visning of nyVisning) {
         ut += "<tr>" +
-            "<td>" + aksje.firma.navn + "</td>" +
-            "<td>" + aksje.verdi + "</td>" +
-            "<td>" + aksje.antall + "</td>" +
+            "<td>" + visning.aksje.firma.navn + "</td>" +
+            "<td>" + visning.antall + "</td>" +
+            "<td>" + visning.verdi + "</td>" +
             "</tr>";
     }
     ut += "</table>";

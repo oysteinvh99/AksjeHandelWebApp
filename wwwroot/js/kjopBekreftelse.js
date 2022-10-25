@@ -27,7 +27,7 @@ function formatter(Aksje, antall,AID) {
     $("#aksjenSinIDGjemt").html(AID)
 }
 
-//Registrere ordre, kjøp
+    //Registrere ordre, kjøp
 function bekreftOrdre() {
     const urlSearchParams = new URLSearchParams(window.location.search);
     const params = Object.fromEntries(urlSearchParams.entries());
@@ -45,18 +45,20 @@ function bekreftOrdre() {
         + currentdate.getHours() + ":"
         + currentdate.getMinutes() + ":" + currentdate.getSeconds();
     console.log(datetime)
+ 
+
 
     var Ordre = {
         Dato: datetime,
         Type: true,
-        Antall: $("#antall").val(),
-        Aksje: aksje,
-        Portofolje: portofolje
+        Antall: $("#antall").val()
+       
+        
     };
 
     $.get("Home/registrerOrdre", Ordre, function (registrert) {
         if (registrert) {
-            window.location.href("index.html");
+            window.location.href='index.html';
         } else {
             //Noe gikk feil
         }

@@ -7,8 +7,9 @@ namespace AksjeHandelWebApp.Models
     {
         public int Id { get; set; }
         public string Dato { get; set; }
-        public bool Type { get; set; }  //Kjøp/salg
+        public bool Type { get; set; }  //Kjï¿½p/salg
         public int AntallAksjer { get; set; }
         public virtual Aksje Aksje { get; set; }
+        
     }
 }
