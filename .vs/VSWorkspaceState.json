@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\wwwroot"
   ],
+  "SelectedNode": "\\AksjeHandelWebApp.csproj",
   "PreviewInSolutionExplorer": false
 }
