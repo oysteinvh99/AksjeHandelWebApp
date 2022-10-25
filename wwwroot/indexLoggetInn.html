@@ -5,11 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>Portefoljen din</title>
+    <title>Aksjehandel</title>
     <link rel="shortcut icon" href="img/favicon2.png">
-    <link rel="stylesheet" href="style/index.css" >
-    <script src="js/visPortefolje.js"></script>
+    <link rel="stylesheet" href="style/index.css">
 </head>
 <body>
     <header>
@@ -26,13 +24,13 @@
                         <div class="container-fluid">
                             <ul class="nav">
                                 <li class="nav-item">
-                                    <a href="indexLoggetInn.html">Forside</a>
+                                    <a id=active href="indexLoggetInn.html">Forside</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="aksjehandel.html">Aksjehandel</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a id=active  href="visPortefolje.html">Portefølje</a>
+                                    <a href="visPortefolje.html">Portefølje</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="omOssLoggetInn.html">Om Oss</a>
@@ -51,9 +49,6 @@
     <!-- START PÅ HOVEDOMRÅDE xxxxxxxxxxxxxxxxxxxxxxx
     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 
-
-
-
     <main class="container">
         <!-- Deler main i to rows, som gjør at vi kan ha tekst på venstre side
         og bilde på høyre side, og at de vil flyttes på responsivt
@@ -62,19 +57,22 @@
             <div class="row" id="main">
                 <!-- Venstre side med tittel og tekst -->
                 <div class="col-sm">
-                    <h2>Dine aksjer:</h2>
-                    <table class="table-condensed">
-                        <tr>
-                            <td><div id="aksjene"></div></td>
-                        </tr>
-
-                    </table>
+                    <h2>Askjehandelen</h2>
+                    <p>
+                        Norges mest brukte handel for kjøp of salg av aksjer.
+                        <br>
+                        <br>
+                        Vi har de mest fornøyde kundene.
+                        Hos oss kan aksjene dine vokse og skape bærekraftig verdi.
+                    </p>
                 </div>
-
+                <div class="col-sm">
+                    <!-- Høyre side med bilde-->
+                    <img id="indexbildet" src="img/indexbildet.png" alt="Picture with two humans in their home" width="100%" height="100%">
+                </div>
             </div>
         </div>
     </main>
-
 
 
     <!-- SLUTT PÅ HOVEDMOMRÅDE xxxxxxxxxxxxxxxxxxxxxxx

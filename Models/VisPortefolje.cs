@@ -1,4 +1,4 @@
-﻿namespace AksjeHandelWebApp.Models
+namespace AksjeHandelWebApp.Models
 {
     public class VisPortefolje
     {

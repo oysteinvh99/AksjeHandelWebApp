@@ -1,25 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "/Users/oysteinhetland/Projects/AksjeHandelWebApp/AksjeHandelWebApp/AksjeHandelWebApp.csproj": {}
+    "/Users/olof/Documents/OsloMet/5 WebApplikasjoner/AksjeHandelWebApp/AksjeHandelWebApp.csproj": {}
   },
   "projects": {
-    "/Users/oysteinhetland/Projects/AksjeHandelWebApp/AksjeHandelWebApp/AksjeHandelWebApp.csproj": {
+    "/Users/olof/Documents/OsloMet/5 WebApplikasjoner/AksjeHandelWebApp/AksjeHandelWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/oysteinhetland/Projects/AksjeHandelWebApp/AksjeHandelWebApp/AksjeHandelWebApp.csproj",
+        "projectUniqueName": "/Users/olof/Documents/OsloMet/5 WebApplikasjoner/AksjeHandelWebApp/AksjeHandelWebApp.csproj",
         "projectName": "AksjeHandelWebApp",
-        "projectPath": "/Users/oysteinhetland/Projects/AksjeHandelWebApp/AksjeHandelWebApp/AksjeHandelWebApp.csproj",
-        "packagesPath": "/Users/oysteinhetland/.nuget/packages/",
-        "outputPath": "/Users/oysteinhetland/Projects/AksjeHandelWebApp/AksjeHandelWebApp/obj/",
+        "projectPath": "/Users/olof/Documents/OsloMet/5 WebApplikasjoner/AksjeHandelWebApp/AksjeHandelWebApp.csproj",
+        "packagesPath": "/Users/olof/.nuget/packages/",
+        "outputPath": "/Users/olof/Documents/OsloMet/5 WebApplikasjoner/AksjeHandelWebApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/oysteinhetland/.nuget/NuGet/NuGet.Config"
+          "/Users/olof/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
