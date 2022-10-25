@@ -41,7 +41,7 @@ function formatter(Aksje, antall, AID) {
 function bekreftOrdre() {
     var portofolje = hentPortofolje(id)//Legg inn brukerID  //Portofolje ID for å hente portofoljen
 
-    for (let aksje of portofolje.aksjer ) { //Portofolje.aksjer er ikke kodet pr. dags dato.
+    for (let aksje of portofolje.aksjer) { //Portofolje.aksjer er ikke kodet pr. dags dato.
         if (aksje.id == AID) {
             if (aksje.antall < antall) {
                 //Du kan ikke selge aksjen, du har ikke nok aksjer
@@ -51,46 +51,42 @@ function bekreftOrdre() {
         }
     }
 
-    var aksje = hentAksje($("#aksjenSinIDGjemt").val());
-    //Hentet fra nettet, datetime
-    var datetime = "Last Sync: " + currentdate.getDate() + "/"
-        + (currentdate.getMonth() + 1) + "/"
-        + currentdate.getFullYear() + " @ "
-        + currentdate.getHours() + ":"
-        + currentdate.getMinutes() + ":";
+    //Henter aksjen
+    function hentAksje(id) {
+        const url = "Home/hentAksje?id=" + id
+        $.get(url, function (aksje) {
+            //Hentet fra nettet, datetime
+            //Henter portofoljen
+            function hentPortofolje(id) {
+                const url = "Home/hentPortefolje?id=" + id
+                $.get(url, function (portofolje) {
 
-    console.log(datetime);
+                    var datetime = "Last Sync: " + currentdate.getDate() + "/"
+                        + (currentdate.getMonth() + 1) + "/"
+                        + currentdate.getFullYear() + " @ "
+                        + currentdate.getHours() + ":"
+                        + currentdate.getMinutes() + ":";
 
-    var Order = {
-        Dato: datetime,
-        Type: salg,
-        Antall: $("#antall").val(),
-        Aksje: aksje,
-        Portofolje: portofolje
-    };
+                    console.log(datetime);
 
-    $.get("Home/registrerOrdre", Order, function (registrert) {
-        if (registrert != null) {
-            //Det gikk ikke an å registrere
-        }
-        else {
-            //Feilmelding
-        }
-    });
-}
+                    var Order = {
+                        Dato: datetime,
+                        Type: false,
+                        AntallAksjer: parseInt($("#antall").val()),
+                        Aksje: aksje,
+                        Portofolje: portofolje
+                    };
 
-//Henter portofoljen
-function hentPortofolje(id) {
-    const url = "Home/hentPortefolje?id=" + id
-    $.get(url, function (portofolje) {
-        return portofolje;
-    });
-};
-
-//Henter aksjen
-function hentAksje(id) {
-    const url = "Home/hentAksje?id=" + id
-    $.get(url, function (aksje) {
-        return aksje;
-    });
+                    $.get("Home/registrerOrdre", Order, function (registrert) {
+                        if (registrert != null) {
+                            //Det gikk ikke an å registrere
+                        }
+                        else {
+                            //Feilmelding
+                        }
+                    });
+                });
+            }
+        });
+    }
 }
