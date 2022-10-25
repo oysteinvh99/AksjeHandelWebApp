@@ -24,12 +24,7 @@ namespace AksjeHandelWebApp.DAL
         {
             try
             {
-                Portefolje enPortefolje = await _db.Portefoljer.FindAsync(id);
-                var hentetPortefolje = new Portefolje()
-                {
-                    Id = enPortefolje.Id,
-                    //   person = enportefolje.person
-                };
+                Portefolje enPortefolje = _db.Portefoljer.Single(x => x.Person.Id.Equals(id));
                 return enPortefolje;
             }
             catch
@@ -37,6 +32,7 @@ namespace AksjeHandelWebApp.DAL
                 return null;
             }
         }
+
 
 
         public async Task<List<Aksje>> hentAksjer()
