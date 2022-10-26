@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="img/favicon2.png">
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet" href="style/bestilling.css">
-    <script src="js/Salgsbekreftelse.js"></script>
+    <script src="js/salgBekreftelse.js"></script>
 </head>
 <body>
     <header>
@@ -39,17 +39,17 @@
                 </div>
                 <div class="col-sm-6">
                     <h2>
-                        Dette er din Ordre:
+                        Dette ordre:
                     </h2>
                     <form>
                         <p id="info"></p>
                         <p id="totalPris"> </p>
-                        <p id="antall"></p>
-                        <p id="aksjenSinIDGjemt"></p>
-
 
                         <input type="button" class="btn btn-primary" onclick="bekreftOrdre()" value="Godkjenn" />
                         <input type="button" class="btn btn-danger" onclick="ikkeGodkjenn()" value="Ikke godkjenn">
+
+                        <p id="antall" style="visibility: hidden"></p>
+                        <p id="aksjenSinIDGjemt" style="visibility: hidden"></p>
                         <p id="feil"></p>
                     </form>
                 </div>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="col-sm-8">
                     <p>
-                        Copyright Aksjehandelen AS <br>
+                        Copyright Aksjehandleren AS <br>
                         Pilestredet 35, 0166, Oslo, Norway
                     </p>
                 </div>

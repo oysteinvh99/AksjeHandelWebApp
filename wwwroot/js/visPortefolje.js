@@ -15,7 +15,7 @@ function hentAlleAksjene() {
         let totalVerdi = 0;
         let ut = "<table class='table table-striped'>" +
             "<tr>" +
-            "<th>Navn</th><th>Antall</th><th>Verdi</th>" +
+            "<th>Aksje</th><th>Antall</th><th>Verdi</th>" +
             "</tr>";
         for (let visning of visPortefolje) {
             ut += "<tr>" +

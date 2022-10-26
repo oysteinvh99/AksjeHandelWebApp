@@ -39,18 +39,17 @@
                 </div>
                 <div class="col-sm-6">
                     <h2>
-                        Dette er din bestilling:
+                        Din bestilling:
                     </h2>
                     <form>
                         <p id="info"></p>
                         <p id="totalPris"> </p>
-                        <p id="antall"></p>
-                        <p id="aksjenSinIDGjemt"></p>
-
 
                         <input type="button" class="btn btn-primary" onclick="bekreftOrdre()" value="Godkjenn" />
                         <input type="button" class="btn btn-danger" onclick="ikkeGodkjenn()" value="Ikke godkjenn">
 
+                        <p id="antall" style="visibility: hidden"></p>
+                        <p id="aksjenSinIDGjemt" style="visibility: hidden"></p>
                     </form>
                 </div>
                 <!-- Tom del for å få midten sentrert -->
@@ -71,10 +70,10 @@
                 <img id="logobildet" href="#" src="img/Askjehandelen.png" alt="Logoen" width="50%" height="90%">
               </div>
               <div class="col-sm-8">
-                <p>
-                    Copyright Aksjehandelen AS <br>
-                    Pilestredet 35, 0166, Oslo, Norway
-                    </p>
+                  <p>
+                      Copyright Aksjehandleren AS <br>
+                      Pilestredet 35, 0166, Oslo, Norway
+                  </p>
               </div>
             </div>
           </div> 
