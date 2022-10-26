@@ -3,7 +3,7 @@
     const regexp2 = /^[a-zA-ZæøåÆØÅ]{1,}$/;
     const regexp3 = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
     const regexp4 = /^[0-9]{8}$/;
-    const fornavn = regexp1.test(person.navn);
+    const fornavn = regexp1.test(person.fornavn);
     const etternavn = regexp2.test(person.etternavn);
     const email = regexp3.test(person.email);
     const telefon = regexp4.test(person.telefon);
