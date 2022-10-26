@@ -17,6 +17,15 @@ function selg(AID) {
     window.location.assign("bestillingSalg.html?id=" + AID + "&antall=" + antall);
 
 }
+function validerTall(email) {
+    const regexp = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+    const ok = regexp.test(email);
+    if (!ok) {
+        return false;
+    } else {
+        return true;
+    }
+}
 
 
 function formaterAksjer(Aksjer) {
