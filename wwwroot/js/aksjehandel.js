@@ -7,25 +7,42 @@ function hentAlleAksjene() {
         formaterAksjer(Aksjer);
     });
 }
-function kjop(AID) {
-    var antall = $("#" + AID).val();
-    window.location.assign("bestilling.html?id=" + AID + "&antall=" + antall);
 
-}
-function selg(AID) {
-    var antall = $("#" + AID).val();
-    window.location.assign("bestillingSalg.html?id=" + AID + "&antall=" + antall);
-
-}
-function validerTall(email) {
-    const regexp = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-    const ok = regexp.test(email);
+function validerTall(antall) {
+    const regexp = /^[0-9]{1,10}$/;
+    const ok = regexp.test(antall);
     if (!ok) {
         return false;
     } else {
         return true;
     }
 }
+
+function kjop(AID) {
+    var antall = $("#" + AID).val();
+    var sjekk = validerTall(antall)
+    if (sjekk) {
+        window.location.assign("bestilling.html?id=" + AID + "&antall=" + antall);
+    }
+    else {
+        $("#feilTall").html("Orderen må innholdet et antall");
+
+    }
+
+}
+function selg(AID) {
+    var antall = $("#" + AID).val();
+    var sjekk = validerTall(antall)
+    if (sjekk) {
+        window.location.assign("bestillingSalg.html?id=" + AID + "&antall=" + antall);
+    }
+    else {
+        $("#feilTall").html("Orderen må innholdet et antall");
+
+    }
+
+}
+
 
 
 function formaterAksjer(Aksjer) {
