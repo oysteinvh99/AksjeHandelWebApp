@@ -31,27 +31,39 @@
         hver av rowsene tar 50% av plassen i containeren -->
         <div class="container">
             <div class="row" id="main">
-                <!-- Venstre side med tittel og tekst -->
-                <div class="col-sm">
-                    <h2>Endre personopplysninger:</h2> 
-                    <form action="loggInn.html">
-                        <label for="fornavn">Fornavn:</label><br>
-                        <input type="text" class="form-control" id="fornavn" style="width: 35%;"><br>
-                        <span id="feilFornavn" style="color: red"></span>
-                        <label for="etternavn">Etternavn:</label><br>
-                        <input type="text" class="form-control" id="etternavn" style="width: 35%"><br>
-                        <span id="feilEtternavn" style="color: red"></span>
-                        <label for="telefon">Telefon:</label><br>
-                        <input type="tel" class="form-control" id="telefon" style="width: 35%;"><br>
-                        <span id="feilTelefon" style="color: red"></span>
-                        <label for="email">E-post:</label><br>
-                        <input type="email" class="form-control" id="email" style="width: 35%;"><br>
-                        <span id="feilEmail" style="color: red"></span>
-                        <a class='btn btn-success' onclick="rediger()">Registrer endringer</a>
-                    </form> 
-                    <br>
-                    <a href="minSide.html" class='btn btn-primary'>Stemmer informasjonen? Trykk her for å gå tilbake</a>
-                </div>
+                <table class="table-condensed"> 
+                    <tr>
+                        <td><label for="fornavn">Fornavn:</label></td>
+                    </tr>                             
+                    <tr>
+                        <td><input type="text" class="form-control" id="fornavn" name="fornavn" placeholder="Skriv inn fornavn..." style="width: 35%;"> </td>
+                        <td><span id="feilFornavn" style="color: red"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="etternavn">Etternavn:</label></td>
+                        </tr>
+                    <tr>
+                        <td><input type="text" class="form-control" id="etternavn" name="etternavn" placeholder="Skriv inn etternavn..." style="width: 35%"></td>
+                        <td><span id="feilEtternavn" style="color: red"></span></td>
+                    </tr>
+                    <tr>
+                    <td><label for="telefon">Telefon:</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control" id="telefon" name="telefon" placeholder="Skriv inn telefon..." style="width: 35%;"></td>
+                        <td><span id="feilTelefon" style="color: red"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        </tr>
+                    <tr>
+                        <td><input type="text" class="form-control" id="email" name="email" placeholder="Skriv inn e-post..." style="width: 35%;"></td>
+                        <td><span id="feilEmail" style="color: red"></span></td>
+                    </tr>
+                    <tr>
+                        <td><br><a class='btn btn-primary' id="rediger" onclick="rediger()"> Registrer endringer</a><br/></td>
+                    </tr>
+            </table>
             </div>
         </div>
     </main>
