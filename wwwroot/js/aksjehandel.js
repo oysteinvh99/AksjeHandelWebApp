@@ -29,8 +29,8 @@ function formaterAksjer(Aksjer) {
             "<td>" + aksje.firma.navn + "</td>" +
             "<td>" + aksje.verdi + "</td>" +
             "<td>" + "<input type='text' id='" + aksje.id + "' style='width: 2.5em'></td>" +
-            "<td> <button onclick='kjop(" + aksje.id + ")'" + ">Kjøp</button></td>" +
-            "<td> <button onclick='selg(" + aksje.id + ")'" + ">Selg</button></a></td>" +
+            "<td> <button class='btn btn-primary' onclick='kjop(" + aksje.id + ")'" + ">Kjøp</button></td>" +
+            "<td> <button class='btn btn-danger' onclick='selg(" + aksje.id + ")'" + ">Selg</button></td>" +
             "</tr>";
     }
     ut += "</table>";
