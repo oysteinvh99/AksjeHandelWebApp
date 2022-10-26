@@ -50,6 +50,30 @@ namespace AksjeHandelWebApp.Models
                     ForsteDagPaBors = "11.11.11",
                     Utbytte = true
                 };
+                var nyFirma3 = new Firma
+                {
+                    Navn = "Kahoot",
+                    ForsteDagPaBors = "11.11.11",
+                    Utbytte = true
+                };
+                var nyFirma4 = new Firma
+                {
+                    Navn = "Samsung",
+                    ForsteDagPaBors = "11.11.11",
+                    Utbytte = true
+                };
+                var nyFirma5 = new Firma
+                {
+                    Navn = "Amazon",
+                    ForsteDagPaBors = "11.11.11",
+                    Utbytte = true
+                };
+                var nyFirma6 = new Firma
+                {
+                    Navn = "Google",
+                    ForsteDagPaBors = "11.11.11",
+                    Utbytte = true
+                };
 
 
 
@@ -68,6 +92,26 @@ namespace AksjeHandelWebApp.Models
                 {
                     Verdi = 15,
                     Firma = nyFirma2
+                };
+                var nyAksje3 = new Aksje
+                {
+                    Verdi = 18,
+                    Firma = nyFirma3
+                };
+                var nyAksje4 = new Aksje
+                {
+                    Verdi = 9,
+                    Firma = nyFirma4
+                };
+                var nyAksje5 = new Aksje
+                {
+                    Verdi = 15,
+                    Firma = nyFirma5
+                };
+                var nyAksje6 = new Aksje
+                {
+                    Verdi = 20,
+                    Firma = nyFirma6
                 };
 
                 var nyOrdre = new Ordre
@@ -114,9 +158,17 @@ namespace AksjeHandelWebApp.Models
                 context.Firmaer.Add(nyFirma);
                 context.Firmaer.Add(nyFirma1);
                 context.Firmaer.Add(nyFirma2);
+                context.Firmaer.Add(nyFirma3);
+                context.Firmaer.Add(nyFirma4);
+                context.Firmaer.Add(nyFirma5);
+                context.Firmaer.Add(nyFirma6);
                 context.Aksjer.Add(nyAksje);
                 context.Aksjer.Add(nyAksje1);
                 context.Aksjer.Add(nyAksje2);
+                context.Aksjer.Add(nyAksje3);
+                context.Aksjer.Add(nyAksje4);
+                context.Aksjer.Add(nyAksje5);
+                context.Aksjer.Add(nyAksje6);
                 context.Ordre.Add(nyOrdre);
                 context.Ordre.Add(nyOrdre1);
                 context.Ordre.Add(nyOrdre2);
