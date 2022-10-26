@@ -82,7 +82,7 @@ namespace AksjeHandelWebApp.DAL
 
             try
             {
-                Person enPerson = _db.Personer.Single(x => x.Email.Equals(email));
+                Person enPerson = _db.Personer.First(x => x.Email == email);
                 return enPerson.Id;
             }
             catch
@@ -102,7 +102,7 @@ namespace AksjeHandelWebApp.DAL
                 var nyPortefolje = new Portefolje();
                 nyPortefolje.Person = nyPerson;
                 _db.Portefoljer.Add(nyPortefolje);
-                _db.Personer.Add(innPerson);
+             //   _db.Personer.Add(innPerson);
                 await _db.SaveChangesAsync();
                 Person enPerson = _db.Personer.First(x => x.Email == innPerson.Email);
                 return enPerson.Id;

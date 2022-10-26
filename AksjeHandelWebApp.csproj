@@ -22,6 +22,9 @@
     <None Remove="Person.db-shm" />
     <None Remove="Person.db-wal" />
     <None Remove="Person.db-shm" />
+    <None Remove="Person.db-shm" />
+    <None Remove="Person.db-shm" />
+    <None Remove="Person.db-shm" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\" />
