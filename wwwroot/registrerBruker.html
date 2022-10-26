@@ -37,12 +37,16 @@
                     <form action="loggInn.html">
                         <label for="fornavn">Fornavn:</label><br>
                         <input type="text" class="form-control" id="fornavn" name="fornavn" placeholder="Skriv inn fornavn..." style="width: 35%;"><br>
+                        <span id="feilFornavn" style="color: red"></span>
                         <label for="etternavn">Etternavn:</label><br>
                         <input type="text" class="form-control" id="etternavn" name="etternavn" placeholder="Skriv inn etternavn..." style="width: 35%"><br>
+                        <span id="feilEtternavn" style="color: red"></span>
                         <label for="telefon">Telefon:</label><br>
                         <input type="text" class="form-control" id="telefon" name="telefon" placeholder="Skriv inn telefon..." style="width: 35%;"><br>
+                        <span id="feilTelefon" style="color: red"></span>
                         <label for="email">E-post:</label><br>
                         <input type="text" class="form-control" id="email" name="email" placeholder="Skriv inn e-post..." style="width: 35%;"><br>
+                        <span id="feilEmail" style="color: red"></span>
                         <a class='btn btn-primary' id="registrer" onclick="lagrePerson()"> Registrering </a><br><br>
                         <a href="loggInn.html">Allerede registrert? Trykk her for å gå tilbake</a>
                     </form> 
