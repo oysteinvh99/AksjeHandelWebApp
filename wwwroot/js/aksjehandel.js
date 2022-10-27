@@ -48,7 +48,7 @@ function selg(AID) {
 function formaterAksjer(Aksjer) {
     let ut = "<table class='table table-striped'>" +
         "<tr>" +
-        "<th>Navn</th><th>Pris</th><th>Antall</th><th>Kjøp</th><th>Salg</th>" +
+        "<th>Aksje</th><th>Pris</th><th>Antall</th><th>Kjøp</th><th>Salg</th>" +
         "</tr>";
     for (let aksje of Aksjer) {
         ut += "<tr>" +
