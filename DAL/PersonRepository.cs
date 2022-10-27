@@ -160,8 +160,17 @@ namespace AksjeHandelWebApp.DAL
             {
                 Person enPerson = await _db.Personer.FindAsync(id);
                 Portefolje enPortefolje =await _db.Portefoljer.FirstAsync(x => x.Person.Id == id);
-                _db.Personer.Remove(enPerson);
+                _db.Personer.Remove(enPortefolje.Person);
+                foreach(Ordre ordre in enPortefolje.Ordre)
+                {
+                    _db.Ordre.Remove(ordre);
+                }
+              
                 _db.Portefoljer.Remove(enPortefolje);
+               
+                
+                
+               
                 await _db.SaveChangesAsync();
                 return true;
             }
