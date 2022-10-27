@@ -11,6 +11,20 @@ header{
     top:0;
 }
 
+#logoen{
+  padding-top: 1%;
+}
+
+
+#logo{
+  font-family: Arial;
+  text-decoration: none;
+  color: #FFFBF3;
+  font-size: 35px;
+  text-align: center;
+  font-weight: bold;
+}
+
 
 /* Inne i Main, slik at innholdet ikke blir for 
 langt oppe på siden  */ 
