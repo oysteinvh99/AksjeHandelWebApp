@@ -94,13 +94,13 @@ namespace AksjeHandelWebApp.DAL
         {
             try
             {
-                var nyPerson = new Person();
+              /*  var nyPerson = new Person();
                 nyPerson.Fornavn = innPerson.Fornavn;
                 nyPerson.Etternavn = innPerson.Etternavn;
                 nyPerson.Email = innPerson.Email;
-                nyPerson.Telefon = innPerson.Telefon;
+                nyPerson.Telefon = innPerson.Telefon;*/
                 var nyPortefolje = new Portefolje();
-                nyPortefolje.Person = nyPerson;
+                nyPortefolje.Person = innPerson; 
                 _db.Portefoljer.Add(nyPortefolje);
              //   _db.Personer.Add(innPerson);
                 await _db.SaveChangesAsync();
@@ -159,9 +159,9 @@ namespace AksjeHandelWebApp.DAL
             try
             {
                 Person enPerson = await _db.Personer.FindAsync(id);
-                //  portefolje portefolje = await _db.portefoljer.FindAsync(enPerson.portefolje.Id);
+                Portefolje enPortefolje =await _db.Portefoljer.FirstAsync(x => x.Person.Id == id);
                 _db.Personer.Remove(enPerson);
-                //      _db.portefoljer.Remove(portefolje);
+                _db.Portefoljer.Remove(enPortefolje);
                 await _db.SaveChangesAsync();
                 return true;
             }
@@ -231,11 +231,19 @@ namespace AksjeHandelWebApp.DAL
 
 
                 }
+                List<VisPortefolje> port = new List<VisPortefolje>();
                 foreach (VisPortefolje enport in nyVisning)
                 {
-                    enport.Verdi = enport.Antall * enport.Aksje.Verdi;
+                    if (enport.Antall > 0)
+                    {
+
+                        enport.Verdi = enport.Antall * enport.Aksje.Verdi;
+                        port.Add(enport);
+                    }
+                   
                 }
-                    return nyVisning;
+ 
+                    return port;
                 
             }
 
@@ -269,7 +277,7 @@ namespace AksjeHandelWebApp.DAL
             return true;
         }
 
-    public async Task<Portefolje> hentOrdre(int id)
+        public async Task<Portefolje> hentOrdre(int id)
         {
             try
             {
@@ -285,6 +293,8 @@ namespace AksjeHandelWebApp.DAL
 
             }
         }
+      
+
     }
 }
     
