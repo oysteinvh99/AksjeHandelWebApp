@@ -31,7 +31,10 @@ langt oppe på siden  */
 #main{
     padding-top: 10vh;
 }
-  
+
+#indexText{
+  font-size: 3vh;
+}
 
   li a {
     display: block;
