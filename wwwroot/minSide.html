@@ -63,17 +63,19 @@
                         <div class="card-body" id="etternavn">Etternavn:</div>
                         <div class="card-body" id="telefon">Telefon:</div>
                         <div class="card-body" id="email">Email:</div>
-                      </div>             
-                      <br>       
-                      <a href="registrerEndringer.html" class='btn btn-primary' id="edringer">Rediger informasjon</a>
+                    </div>
+                    <br>
+                    <a href="registrerEndringer.html" class='btn btn-primary' id="edringer">Rediger informasjon</a>
                 </div>
+
+                <div class="col-sm text-center">
+                    <a class='btn btn-primary' onclick="seOrdre()" style="padding-right: 2%;">Handlehistorikk</a>
+                    <a class='btn btn-danger' onclick="loggUt()" style="float:right;padding-left:2%">Logg ut</a>
+                </div>
+
                 <div>
                     <br>
-                 <a class='btn btn-danger' id="slett" onclick="slettBruker()">Slett bruker</a>
-                </div>
-                <div class="col-sm">
-                    <a class='btn btn-danger' onclick="loggUt()" style="float: right;">Logg ut</a>
-                    <a class='btn btn-primary' onclick="seOrdre()" style="float: right;">Handlehistorikk</a>
+                    <a class='btn btn-danger' id="slett" onclick="slettBruker()">Slett bruker</a>
                 </div>
             </div>
         </div>
