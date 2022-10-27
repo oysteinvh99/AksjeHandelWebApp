@@ -27,9 +27,9 @@ function hentAlleAksjene() {
             totalVerdi = totalVerdi + parseInt(visning.verdi);
         }
         ut += "<tr>" +
-            "<td>" + "Total:" + "</td>" +
-            "<td>" + totalAntall + "</td>" +
-            "<td>" + totalVerdi + "</td>" +
+            "<td style='font-weight: bold'>" + "Total:" + "</td>" +
+            "<td style='font-weight: bold'>" + totalAntall + "</td>" +
+            "<td style='font-weight: bold'>" + totalVerdi + "</td>" +
             "</tr>";
         ut += "</table>";
         $("#aksjene").html(ut);

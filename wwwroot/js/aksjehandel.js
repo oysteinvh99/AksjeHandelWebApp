@@ -37,7 +37,7 @@ function selg(AID) {
         window.location.assign("bestillingSalg.html?id=" + AID + "&antall=" + antall);
     }
     else {
-        $("#feilTall").html("Orderen må innholdet et antall");
+        $("#feilTall").html("Ordren må innholde et antall");
 
     }
 
