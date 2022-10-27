@@ -70,7 +70,7 @@ function lagrePerson() {
 
         $.get(url, function (id) {
             if (id != 0) {
-                $("#brukt").html("Kunde eksisterer allerede");
+                $("#feil").html("Kunde eksisterer allerede");
             }
             else {
 

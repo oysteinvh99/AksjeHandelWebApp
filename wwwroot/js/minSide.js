@@ -18,6 +18,18 @@ function hentEnPerson() {
       
     }
 }
+function slettBruker() {
+    const url = "Home/slettBruker?id=" + sessionStorage.getItem("id");
+    $.get(url, function (ok) {
+        if (ok) {
+            loggUt();
+        }
+
+
+
+    });
+
+}
 
 function loggUt() {
     sessionStorage.clear("id");
@@ -28,3 +40,6 @@ function seOrdre() {
     window.location.href = 'visOrdre.html';
 
 }
+
+
+

@@ -45,7 +45,7 @@ function bekreftOrdre() {
         const url = "Home/visPortefolje?id=" + sessionStorage.getItem("id");
     $.post(url, function (visPortefolje) {
         for (let visning of visPortefolje) {
-            if (parseInt(visning.antall) > antall && visning.aksje.id == AID) {
+            if (parseInt(visning.antall) >= antall && visning.aksje.id == AID) {
                 registrerOrdre();
                 sjekk = 1;
             }
