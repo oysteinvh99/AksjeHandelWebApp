@@ -19,7 +19,7 @@ namespace AksjeHandelWebApp.Models
 
                 var nyPerson = new Person
                 {
-                    Fornavn = "Emil ",
+                    Fornavn = "Emil",
                     Etternavn="Hengy",
                     Telefon="99995555",
                     Email="emilhengy@gmail.com"
@@ -153,7 +153,7 @@ namespace AksjeHandelWebApp.Models
                 nyPortefolje.Ordre=nyeOrdre;
                 
 
-                context.Personer.Add(nyPerson);
+              
                 context.Portefoljer.Add(nyPortefolje);
                 context.Firmaer.Add(nyFirma);
                 context.Firmaer.Add(nyFirma1);

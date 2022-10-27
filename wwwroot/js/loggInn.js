@@ -1,4 +1,9 @@
-﻿function validerEmail(email) {
+﻿$(function () {
+    sessionStorage.clear("id");
+});
+
+
+function validerEmail(email) {
     const regexp = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
     const ok = regexp.test(email);
     if(!ok) {

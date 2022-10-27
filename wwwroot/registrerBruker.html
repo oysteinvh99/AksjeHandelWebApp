@@ -28,43 +28,39 @@
         og bilde på høyre side, og at de vil flyttes på responsivt
         hver av rowsene tar 50% av plassen i containeren -->
         <div class="container">
-            <div class="row" id="main">
-                <div>
-                    <a href="loggInn.html" class='btn btn-secondary' id="tilbake"></time>Tilbake</a>
-                </div>
-                 <br><br>
+           <!--- <div class="row" id="main">--->
                 <table class="table-condensed"> 
-                    <tr>
-                        <td><label for="fornavn">Fornavn:</label></td>
-                    </tr>                             
-                    <tr>
-                        <td><input type="text" class="form-control" id="fornavn" name="fornavn" placeholder="Skriv inn fornavn..." style="width: 35%;"></td>
-                        <td><span id="feilFornavn" style="color: red"></span></td>
+                 <tr>
+                    <td><label for="fornavn">Fornavn:</label></td>
+                </tr>                             
+                <tr>
+                    <td><input type="text" class="form-control" id="fornavn" name="fornavn" placeholder="Skriv inn fornavn..." style="width: 100%;"> </td>
+                    <td><span id="feilFornavn" style="color: red"></span></td>
+                </tr>
+                <tr>
+                    <td><label for="etternavn">Etternavn:</label></td>
                     </tr>
-                    <tr>
-                        <td><label for="etternavn">Etternavn:</label></td>
-                        </tr>
-                    <tr>
-                        <td><input type="text" class="form-control" id="etternavn" name="etternavn" placeholder="Skriv inn etternavn..." style="width: 35%"></td>
-                        <td><span id="feilEtternavn" style="color: red"></span></td>
+                <tr>
+                    <td><input type="text" class="form-control" id="etternavn" name="etternavn" placeholder="Skriv inn etternavn..." style="width: 100%"></td>
+                    <td><span id="feilEtternavn" style="color: red"></span></td>
+                </tr>
+                <tr>
+                <td><label for="telefon">Telefon:</label></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="form-control" id="telefon" name="telefon" placeholder="Skriv inn telefon..." style="width: 100%;"></td>
+                    <td><span id="feilTelefon" style="color: red"></span></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
                     </tr>
-                    <tr>
-                    <td><label for="telefon">Telefon:</label></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" class="form-control" id="telefon" name="telefon" placeholder="Skriv inn telefon..." style="width: 35%;"></td>
-                        <td><span id="feilTelefon" style="color: red"></span></td>
-                    </tr>
-                    <tr>
-                        <td><label for="email">Email:</label></td>
-                        </tr>
-                    <tr>
-                        <td><input type="text" class="form-control" id="email" name="email" placeholder="Skriv inn e-post..." style="width: 35%;"></td>
-                        <td><span id="feilEmail" style="color: red"></span></td>
-                    </tr>
-                    <tr>
-                        <td><br><a class='btn btn-primary' id="registrer" onclick="lagrePerson()"> Registrer bruker </a><br/></td>
-                    </tr>
+                <tr>
+                    <td><input type="text" class="form-control" id="email" name="email" placeholder="Skriv inn e-post..." style="width: 100%;"></td>
+                    <td><span id="feilEmail" style="color: red"></span></td>
+                </tr>
+                <tr>
+                    <td><br><a class='btn btn-primary' id="registrer" onclick="lagrePerson()"> Registrer bruker </a><br/></td>
+                </tr>
             </table>
             <div id="feil"></div>
             </div>
