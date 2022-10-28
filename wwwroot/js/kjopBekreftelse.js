@@ -19,10 +19,10 @@ function hent(AID, antall) {
 function formatter(Aksje, antall,AID) {
     var totalPris = 0;
     var antallet = 0;
-    antallet = parseInt(antall);
-    totalPris = Aksje.verdi * antallet;
-    $("#info").html("Kjøp: " + antallet +" "+ Aksje.firma.navn + " aksjer " + "(" + Aksje.verdi+" NOK per aksje)");
-    $("#totalPris").html("Totalpris: " + totalPris+" kr.");
+    antallet = parseFloat(antall);
+    totalPris = parseFloat(Aksje.verdi) * antallet;
+    $("#info").html("Kjøp: " + antallet + " " + Aksje.firma.navn + " aksjer " + "(" + Aksje.verdi + " NOK per aksje)");
+    $("#totalPris").html("Totalpris: " + totalPris.toFixed(2) + " kr.");
     $("#antall").html(antallet);
     $("#aksjenSinIDGjemt").html(AID)
 }
@@ -36,7 +36,7 @@ function bekreftOrdre() {
     const params = Object.fromEntries(urlSearchParams.entries());
     const AID = params.id;
     var antall = 0;
-    antall = parseInt(params.antall);
+    antall = parseFloat(params.antall);
 
     console.log(AID);
 

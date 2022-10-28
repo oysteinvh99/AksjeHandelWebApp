@@ -11,6 +11,7 @@ namespace AksjeHandelWebApp.Models
         public int AntallAksjer { get; set; }
         public virtual Aksje Aksje { get; set; }
         public virtual Portefolje Portefolje { get; set; }
-        
+        public virtual float Kjøpspris { get; set; }
+                
     }
 }

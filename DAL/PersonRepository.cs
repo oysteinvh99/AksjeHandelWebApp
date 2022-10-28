@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Timers;
 
 namespace AksjeHandelWebApp.DAL
 {
@@ -94,15 +95,15 @@ namespace AksjeHandelWebApp.DAL
         {
             try
             {
-              /*  var nyPerson = new Person();
-                nyPerson.Fornavn = innPerson.Fornavn;
-                nyPerson.Etternavn = innPerson.Etternavn;
-                nyPerson.Email = innPerson.Email;
-                nyPerson.Telefon = innPerson.Telefon;*/
+                /*  var nyPerson = new Person();
+                  nyPerson.Fornavn = innPerson.Fornavn;
+                  nyPerson.Etternavn = innPerson.Etternavn;
+                  nyPerson.Email = innPerson.Email;
+                  nyPerson.Telefon = innPerson.Telefon;*/
                 var nyPortefolje = new Portefolje();
-                nyPortefolje.Person = innPerson; 
+                nyPortefolje.Person = innPerson;
                 _db.Portefoljer.Add(nyPortefolje);
-             //   _db.Personer.Add(innPerson);
+                //   _db.Personer.Add(innPerson);
                 await _db.SaveChangesAsync();
                 Person enPerson = _db.Personer.First(x => x.Email == innPerson.Email);
                 return enPerson.Id;
@@ -119,6 +120,7 @@ namespace AksjeHandelWebApp.DAL
             try
             {
                 var nyeOrdre = new List<Ordre>();
+                innOrdre.Kjøpspris = innOrdre.Aksje.Verdi * innOrdre.AntallAksjer;
                 nyeOrdre.Add(innOrdre);
                 Portefolje enPortefolje = await _db.Portefoljer.FindAsync(innOrdre.Portefolje.Id);
                 enPortefolje.Ordre = nyeOrdre;
@@ -159,18 +161,18 @@ namespace AksjeHandelWebApp.DAL
             try
             {
                 Person enPerson = await _db.Personer.FindAsync(id);
-                Portefolje enPortefolje =await _db.Portefoljer.FirstAsync(x => x.Person.Id == id);
+                Portefolje enPortefolje = await _db.Portefoljer.FirstAsync(x => x.Person.Id == id);
                 _db.Personer.Remove(enPortefolje.Person);
-                foreach(Ordre ordre in enPortefolje.Ordre)
+                foreach (Ordre ordre in enPortefolje.Ordre)
                 {
                     _db.Ordre.Remove(ordre);
                 }
-              
+
                 _db.Portefoljer.Remove(enPortefolje);
-               
-                
-                
-               
+
+
+
+
                 await _db.SaveChangesAsync();
                 return true;
             }
@@ -247,13 +249,14 @@ namespace AksjeHandelWebApp.DAL
                     {
 
                         enport.Verdi = enport.Antall * enport.Aksje.Verdi;
+                        enport.Verdi = (float)Math.Round(enport.Verdi * 100f) / 100f;
                         port.Add(enport);
                     }
-                   
+
                 }
- 
-                    return port;
-                
+
+                return port;
+
             }
 
 
@@ -302,10 +305,74 @@ namespace AksjeHandelWebApp.DAL
 
             }
         }
-      
+        public async Task<List<Aksje>>oppdaterBors()
+        {
+            Random rnd = new Random();
+            List<float> random = new List<float>();
+            random.Add((float)1.009);
+            random.Add((float)1.008);
+            random.Add((float)1.007);
+            random.Add((float)1.006);
+            random.Add((float)1.005);
+            random.Add((float)1.004);
+            random.Add((float)1.003);
+            random.Add((float)1.002);
+            random.Add((float)1.001);
+            random.Add((float)0.999);
+            random.Add((float)0.998);
+            random.Add((float)0.997);
+            random.Add((float)0.996);
+            random.Add((float)0.995);
+            random.Add((float)0.994);
+            random.Add((float)0.993);
+            random.Add((float)0.992);
+            random.Add((float)0.991);
+            List<Aksje> alleAksjer = await _db.Aksjer.ToListAsync();
+            foreach (Aksje aksje in alleAksjer)
+            {
+                aksje.Verdi = aksje.Verdi * random.ElementAt(rnd.Next(random.Count()));
+                aksje.Verdi = (float)Math.Round(aksje.Verdi * 100f) / 100f;
+                await _db.SaveChangesAsync();
+            }
+            return alleAksjer.ToList();
+
+
+        }
+        public async Task<float> kjoptFor(int id)
+        {
+            try
+            {
+                List<VisPortefolje> nyVisning = new List<VisPortefolje>();
+                Portefolje enPortefolje = _db.Portefoljer.First(x => x.Person.Id == id);
+                float pris = 0;
+                foreach (Ordre s in enPortefolje.Ordre)
+                {
+                    if (s.Type)
+                    {
+                        pris = pris + s.Kjøpspris;
+                    }
+                    else
+                    {
+                        pris = pris - s.Kjøpspris;
+                    }
+
+                }
+                return pris;
+            }
+            catch
+            {
+                return 0;
+            }
+
+        }
+
 
     }
 }
+
+
+
+
     
 
 

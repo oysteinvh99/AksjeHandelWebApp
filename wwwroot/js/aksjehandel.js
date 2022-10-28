@@ -1,10 +1,30 @@
 $(function () {
-    hentAlleAksjene();
+  //  hentAlleAksjene();
+    yourFunction();
+
 });
+function yourFunction() {
+    // do whatever you like here
+    oppdater();
+    hentAlleAksjene();
+    setTimeout(yourFunction, 10000);
+    
+}
 
 function hentAlleAksjene() {
     $.get("Home/hentAksjer", function (Aksjer) {
         formaterAksjer(Aksjer);
+        for (let aksje of Aksjer) {
+            sessionStorage.setItem("Antall", $('#' + aksje.id).val())
+        }
+      
+       
+    });
+}
+function oppdater() {
+    $.get("Home/oppdaterBors", function (Aksjer) {
+
+       
     });
 }
 
@@ -46,7 +66,7 @@ function selg(AID) {
 
 
 function formaterAksjer(Aksjer) {
-    let ut = "<table class='table table-striped'>" +
+    let ut = "<table class='table table-striped' style='table-layout: fixed'>" +
         "<tr>" +
         "<th>Navn</th><th>Pris</th><th>Antall</th><th>Kjøp</th><th>Salg</th>" +
         "</tr>";
@@ -58,6 +78,10 @@ function formaterAksjer(Aksjer) {
             "<td> <button class='btn btn-primary' onclick='kjop(" + aksje.id + ")'" + ">Kjøp</button></td>" +
             "<td> <button class='btn btn-danger' onclick='selg(" + aksje.id + ")'" + ">Selg</button></td>" +
             "</tr>";
+
+        $('#' + aksje.id).text(sessionStorage.getItem("Antall"));
+        
+
     }
     ut += "</table>";
     $("#aksjene").html(ut);

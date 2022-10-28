@@ -78,5 +78,14 @@ namespace AksjeHandelWebApp.Controllers
         {
             return await _db.hentOrdre(id);
         }
+        public async Task<List<Aksje>>oppdaterBors()
+        {
+            return await _db.oppdaterBors();
+        }
+
+        public async Task<float> kjoptFor(int id)
+        {
+            return await _db.kjoptFor(id);
+        }
     }
 }

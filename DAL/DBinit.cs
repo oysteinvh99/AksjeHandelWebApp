@@ -119,7 +119,8 @@ namespace AksjeHandelWebApp.Models
                     Dato = "24.10.2022",
                     Type = true,
                     AntallAksjer = 48,
-                    Aksje = nyAksje
+                    Aksje = nyAksje,
+                    Kjøpspris = 576
                 };
 
                 var nyOrdre1 = new Ordre
@@ -127,7 +128,8 @@ namespace AksjeHandelWebApp.Models
                     Dato = "20.10.2022",
                     Type = true,
                     AntallAksjer = 312,
-                    Aksje = nyAksje1
+                    Aksje = nyAksje1,
+                    Kjøpspris = 2184
                 };
 
                 var nyOrdre2 = new Ordre
@@ -135,7 +137,8 @@ namespace AksjeHandelWebApp.Models
                     Dato = "20.10.2022",
                     Type = true,
                     AntallAksjer = 172,
-                    Aksje = nyAksje
+                    Aksje = nyAksje,
+                    Kjøpspris = 2064
                 };
 
                 var nyOrdre3 = new Ordre
@@ -143,7 +146,8 @@ namespace AksjeHandelWebApp.Models
                     Dato = "20.10.2022",
                     Type = true,
                     AntallAksjer = 149,
-                    Aksje = nyAksje1
+                    Aksje = nyAksje1,
+                    Kjøpspris=1043
                 };
                 var nyeOrdre = new List<Ordre>();
                 nyeOrdre.Add(nyOrdre1);
