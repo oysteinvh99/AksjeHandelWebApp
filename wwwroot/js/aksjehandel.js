@@ -1,10 +1,8 @@
 $(function () {
-  //  hentAlleAksjene();
     yourFunction();
 
 });
 function yourFunction() {
-    // do whatever you like here
     oppdater();
     hentAlleAksjene();
     setTimeout(yourFunction, 10000);
@@ -13,19 +11,14 @@ function yourFunction() {
 
 function hentAlleAksjene() {
     $.get("Home/hentAksjer", function (Aksjer) {
+        readText(Aksjer);
         formaterAksjer(Aksjer);
-        for (let aksje of Aksjer) {
-            sessionStorage.setItem("Antall", $('#' + aksje.id).val())
-        }
-      
-       
-    });
+        });
 }
 function oppdater() {
     $.get("Home/oppdaterBors", function (Aksjer) {
-
-       
     });
+    
 }
 
 function validerTall(antall) {
@@ -74,15 +67,35 @@ function formaterAksjer(Aksjer) {
         ut += "<tr>" +
             "<td>" + aksje.firma.navn + "</td>" +
             "<td>" + aksje.verdi + "</td>" +
-            "<td>" + "<input type='text' id='" + aksje.id + "' style='width: 2.5em'></td>" +
+            "<td>" + "<input on type='text' id='" + aksje.id + "' style='width: 2.5em'></td>" +
             "<td> <button class='btn btn-primary' onclick='kjop(" + aksje.id + ")'" + ">Kjøp</button></td>" +
             "<td> <button class='btn btn-danger' onclick='selg(" + aksje.id + ")'" + ">Selg</button></td>" +
             "</tr>";
-
-        $('#' + aksje.id).text(sessionStorage.getItem("Antall"));
+        let navn = ' '+aksje.firma.navn
+        
         
 
     }
     ut += "</table>";
     $("#aksjene").html(ut);
+    for (let aksjene of Aksjer) {
+        let navnet = ' ' + aksjene.firma.navn
+        const fromSessionStorage = sessionStorage.getItem(navnet);
+        const parsed = JSON.parse(fromSessionStorage);
+        $('#' + aksjene.id).val(parsed).trigger('change');
+
+
+    }
+}
+function readText(Aksjer) {
+    for (let aksje of Aksjer) {
+        let navnet = ' ' + aksje.firma.navn;
+        let val = $('#' + aksje.id).val();
+        sessionStorage.setItem(navnet, JSON.stringify(val));
+        
+
+
+
+
+    }
 }

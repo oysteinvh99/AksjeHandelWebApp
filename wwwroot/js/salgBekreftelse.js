@@ -20,7 +20,7 @@ function formatter(Aksje, antall, AID) {
     var totalPris = 0;
     var antallet = 0;
     antallet = parseInt(antall);
-    parseFloat(totalPris) = parseFloat(Aksje.verdi) * antallet;
+    totalPris = parseFloat(Aksje.verdi) * antallet;
     $("#info").html("Salg: " + antallet + ". " + Aksje.firma.navn + " aksjer " + "(" + Aksje.verdi + " pr. aksje)");
     $("#totalPris").html("Totalpris: " + totalPris + " kr.");
     $("#antall").html(antallet);

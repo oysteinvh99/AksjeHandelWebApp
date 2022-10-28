@@ -62,15 +62,6 @@ namespace AksjeHandelWebApp.DAL
             try
             {
                 Person enPerson = await _db.Personer.FindAsync(id);
-                var hentetportefolje = new Person()
-                {
-                    Id = enPerson.Id,
-                    Fornavn = enPerson.Fornavn,
-                    Etternavn = enPerson.Etternavn,
-                    Telefon = enPerson.Telefon,
-                    Email = enPerson.Email,
-
-                };
                 return enPerson;
             }
             catch
@@ -95,15 +86,9 @@ namespace AksjeHandelWebApp.DAL
         {
             try
             {
-                /*  var nyPerson = new Person();
-                  nyPerson.Fornavn = innPerson.Fornavn;
-                  nyPerson.Etternavn = innPerson.Etternavn;
-                  nyPerson.Email = innPerson.Email;
-                  nyPerson.Telefon = innPerson.Telefon;*/
                 var nyPortefolje = new Portefolje();
                 nyPortefolje.Person = innPerson;
                 _db.Portefoljer.Add(nyPortefolje);
-                //   _db.Personer.Add(innPerson);
                 await _db.SaveChangesAsync();
                 Person enPerson = _db.Personer.First(x => x.Email == innPerson.Email);
                 return enPerson.Id;
