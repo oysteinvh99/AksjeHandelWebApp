@@ -57,7 +57,7 @@ function selg(AID) {
         window.location.assign("bestillingSalg.html?id=" + AID + "&antall=" + antall);
     }
     else {
-        $("#feilTall").html("Orderen må innholdet et antall");
+        $("#feilTall").html("Ordren må innholde et antall");
 
     }
 
@@ -68,7 +68,7 @@ function selg(AID) {
 function formaterAksjer(Aksjer) {
     let ut = "<table class='table table-striped' style='table-layout: fixed'>" +
         "<tr>" +
-        "<th>Navn</th><th>Pris</th><th>Antall</th><th>Kjøp</th><th>Salg</th>" +
+        "<th>Aksje</th><th>Pris</th><th>Antall</th><th>Kjøp</th><th>Salg</th>" +
         "</tr>";
     for (let aksje of Aksjer) {
         ut += "<tr>" +
