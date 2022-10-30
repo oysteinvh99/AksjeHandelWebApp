@@ -2,6 +2,7 @@
     hentAlleOrdrene();
 });
 
+//Funksjon som henter alle ordre til en bruker
 function hentAlleOrdrene() {
     const url = "Home/hentOrdre?id=" + sessionStorage.getItem("id");
     $.post(url, function (portefolje) {
@@ -10,7 +11,7 @@ function hentAlleOrdrene() {
     });
 }
 
-
+    //Funksjon som formaterer alle ordrene på et ryddig vis
     function formaterOrdrene(portefolje) {
         let ut1 = "<table class='table table-striped'>" +
             "<tr>" +
