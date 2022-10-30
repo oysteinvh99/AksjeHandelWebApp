@@ -1,4 +1,6 @@
-﻿function validerPerson(person) {
+﻿
+//Regex for når en bruker registrer seg med feilmelding for "feil" input
+function validerPerson(person) {
     const regexp1 = /^[a-zA-ZæøåÆØÅ]{1,}$/;
     const regexp2 = /^[a-zA-ZæøåÆØÅ]{1,}$/;
     const regexp3 = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
@@ -52,7 +54,7 @@
 
 
 
-
+// Funksjon som lager person objektet og validerer regex, sjekker om person eksisterer allerede
 function lagrePerson() {
     const person = {
         fornavn: $("#fornavn").val(),
@@ -83,7 +85,7 @@ function lagrePerson() {
 }
 };
 
-
+//Sender personobjektet til server.
 function leggTilPerson(person) {
     const url = "Home/lagrePerson?Person=" + person;
     $.post(url, person, function (OK) {
