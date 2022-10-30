@@ -99,3 +99,25 @@ langt oppe på siden  */
     color:#FFFBF3;
     padding-top:2vh;
 }
+
+
+
+
+@media only screen and (max-width: 800px) {
+    .nav-item {
+        line-height: 2;
+        font-size: 1.4vh;
+    }
+
+    #logo {
+        visibility: hidden;
+    }
+
+    #logoen {
+        visibility: hidden;
+    }
+
+    #logicon {
+        visibility: hidden;
+    }
+}
