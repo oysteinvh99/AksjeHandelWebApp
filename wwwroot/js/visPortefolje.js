@@ -48,7 +48,7 @@ function hentAlleAksjene() {
      
          ut += "<tr>" +
              "<td>" + "Verdi:" + "</td>" +
-             "<td>" + totalAntall.toFixed(2) + "</td>" +
+             "<td>" + totalAntall + "</td>" +
              "<td>" + totalVerdi.toFixed(2) + "</td>" +
             "</tr>";
         ut += "</table>";
@@ -71,7 +71,7 @@ function hentAlleAksjene() {
             "</tr>";
         ut1 += "<tr>" +
             "<td>" + "Kjøpssum:" + "</td>" +
-            "<td>" + totalAntall.toFixed(2) + "</td>" +
+            "<td>" + totalAntall + "</td>" +
             "<td>" + pris.toFixed(2) + "</td>" +
             "</tr>";
 

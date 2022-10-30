@@ -19,10 +19,10 @@ namespace AksjeHandelWebApp.Models
 
                 var nyPerson = new Person
                 {
-                    Fornavn = "Emil",
-                    Etternavn="Hengy",
+                    Fornavn = "Ola",
+                    Etternavn="Nordmann",
                     Telefon="99995555",
-                    Email="emilhengy@gmail.com"
+                    Email="123@gmail.com"
 
                 };
 

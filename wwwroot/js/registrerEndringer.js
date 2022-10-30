@@ -10,7 +10,7 @@ function validerPerson(person) {
     const regexp4 = /^[0-9]{8}$/;
     const fornavn = regexp1.test(person.fornavn);
     const etternavn = regexp2.test(person.etternavn);
-    const email = regexp3.test(person.email);
+//  const email = regexp3.test(person.email);
     const telefon = regexp4.test(person.telefon);
     var sjekk = 0;
     if (!fornavn) {
@@ -28,7 +28,7 @@ function validerPerson(person) {
         $("#feilEtternavn").html("");
 
     }
-    if (!email) {
+  /*  if (!email) {
         $("#feilEmail").html("Emailen er tom eller formatert feil");
 
     } else if (email) {
@@ -36,7 +36,7 @@ function validerPerson(person) {
         var sjekk = sjekk + 1;
 
 
-    }
+    } */
     if (!telefon) {
         $("#feilTelefon").html("Telefonummer må bestå av åtte siffer");
 
@@ -45,7 +45,7 @@ function validerPerson(person) {
         var sjekk = sjekk + 1;
 
     }
-    if (sjekk == 4) {
+    if (sjekk == 3) {
         return true;
     }
     else {
@@ -66,18 +66,16 @@ function hentEnPerson() {
     function formaterPerson(person) {
         $("#fornavn").val(person.fornavn)
         $("#etternavn").val(person.etternavn)
-        $("#email").val(person.email)
+     
         $("#telefon").val(person.telefon)
 
     }
 }
-
 //Henter informasjonen og lager et nytt personobjekt, derretter lagres personen
 function rediger() {
     var person = {
         fornavn: $("#fornavn").val(),
         etternavn: $("#etternavn").val(),
-        email: $("#email").val(),
         telefon: $("#telefon").val(),
         id: sessionStorage.getItem("id")
     }
@@ -86,7 +84,7 @@ function rediger() {
 
     if (sjekk){
 
-        $.post("Home/Endre", person, function (OK) {
+        $.post("Home/endrePerson", person, function (OK) {
             if (OK) {
                 window.location.href = 'minSide.html';
             }
