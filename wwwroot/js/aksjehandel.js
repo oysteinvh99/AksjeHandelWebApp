@@ -2,6 +2,8 @@ $(function () {
     yourFunction();
 
 });
+
+//yourFunction som kjører i intervaller
 function yourFunction() {
     oppdater();
     hentAlleAksjene();
@@ -9,18 +11,22 @@ function yourFunction() {
     
 }
 
+//Metode som henter alle aksjene 
 function hentAlleAksjene() {
     $.get("Home/hentAksjer", function (Aksjer) {
         readText(Aksjer);
         formaterAksjer(Aksjer);
         });
 }
+
+//Metode som oppdaterer prisene
 function oppdater() {
     $.get("Home/oppdaterBors", function (Aksjer) {
     });
     
 }
 
+//Regex for å validere tall
 function validerTall(antall) {
     const regexp = /^[0-9]{1,10}$/;
     const ok = regexp.test(antall);
@@ -31,6 +37,7 @@ function validerTall(antall) {
     }
 }
 
+//Funksjon som kjøres når et kjøp skal gjøres
 function kjop(AID) {
     var antall = $("#" + AID).val();
     var sjekk = validerTall(antall)
@@ -41,8 +48,9 @@ function kjop(AID) {
         $("#feilTall").html("Orderen må innholdet et antall");
 
     }
-
 }
+
+//Funksjon som kjøres når brukeren skal selge aksjer
 function selg(AID) {
     var antall = $("#" + AID).val();
     var sjekk = validerTall(antall)
@@ -56,8 +64,7 @@ function selg(AID) {
 
 }
 
-
-
+//Formaterer alle aksjene for å bli vist på en ryddig måte, den linker også onclick med funksjoner.
 function formaterAksjer(Aksjer) {
     let ut = "<table class='table table-striped' style='table-layout: fixed'>" +
         "<tr>" +
@@ -87,15 +94,11 @@ function formaterAksjer(Aksjer) {
 
     }
 }
+
 function readText(Aksjer) {
     for (let aksje of Aksjer) {
         let navnet = ' ' + aksje.firma.navn;
         let val = $('#' + aksje.id).val();
         sessionStorage.setItem(navnet, JSON.stringify(val));
-        
-
-
-
-
     }
 }
