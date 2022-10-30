@@ -116,7 +116,7 @@ namespace AksjeHandelWebApp.Models
 
                 var nyOrdre = new Ordre
                 {
-                    Dato = "24.10.2022",
+                    Dato = "24/9/2022 16:12",
                     Type = true,
                     AntallAksjer = 48,
                     Aksje = nyAksje,
@@ -125,7 +125,7 @@ namespace AksjeHandelWebApp.Models
 
                 var nyOrdre1 = new Ordre
                 {
-                    Dato = "20.10.2022",
+                    Dato = "20/10/2022 12:22",
                     Type = true,
                     AntallAksjer = 312,
                     Aksje = nyAksje1,
@@ -134,7 +134,7 @@ namespace AksjeHandelWebApp.Models
 
                 var nyOrdre2 = new Ordre
                 {
-                    Dato = "20.10.2022",
+                    Dato = "20/10/2022 13:11",
                     Type = true,
                     AntallAksjer = 172,
                     Aksje = nyAksje,
@@ -143,7 +143,7 @@ namespace AksjeHandelWebApp.Models
 
                 var nyOrdre3 = new Ordre
                 {
-                    Dato = "20.10.2022",
+                    Dato = "21/10/2022 14:01",
                     Type = true,
                     AntallAksjer = 149,
                     Aksje = nyAksje1,
