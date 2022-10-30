@@ -48,7 +48,7 @@ function bekreftOrdre() {
         $.post(url, function (portefolje) {
             
             var currentdate = new Date();
-            var datetime = currentdate.getDay() + "/" + currentdate.getMonth()      //Kode for å hente nåværende tidspunkt
+            var datetime = currentdate.getDate() + "/" + currentdate.getMonth()      //Kode for å hente nåværende tidspunkt
                 + "/" + currentdate.getFullYear() + "  "
                 + currentdate.getHours() + ":"
                 + currentdate.getMinutes() + ":" + currentdate.getSeconds();
