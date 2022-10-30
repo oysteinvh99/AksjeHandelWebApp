@@ -83,7 +83,7 @@ function rediger() {
 
     if (sjekk){
 
-        $.post("Home/Endre", person, function (OK) {
+        $.post("Home/endrePerson", person, function (OK) {
             if (OK) {
                 window.location.href = 'minSide.html';
             }

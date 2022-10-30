@@ -1,11 +1,11 @@
 $(function () {
-    yourFunction();
+    oppdaterBors();
 
 });
-function yourFunction() {
+function oppdaterBors() {
     oppdater();
     hentAlleAksjene();
-    setTimeout(yourFunction, 10000);
+    setTimeout(oppdaterBors, 10000);
     
 }
 

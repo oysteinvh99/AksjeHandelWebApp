@@ -70,9 +70,9 @@ namespace AksjeHandelWebApp.Controllers
        
 
         }
-        public async Task<bool> Endre(Person innPerson)
+        public async Task<bool> endrePerson(Person innPerson)
         {
-            return await _db.Endre(innPerson);
+            return await _db.endrePerson(innPerson);
         }
         public async Task<Portefolje> hentOrdre(int id)
         {
