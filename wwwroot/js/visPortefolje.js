@@ -4,20 +4,22 @@ $(function () {
     yourFunction();
 });
 
+//Funksjon som kaller på seg selv i intervaller 
 function yourFunction() {
-                            // do whatever you like here
     hentAlleAksjene();
     oppdater();
     setTimeout(yourFunction, 10000);
 
 }
+
+//Oppdater funksjon som oppdaterer børsjens priser
 function oppdater() {
     $.get("Home/oppdaterBors", function (Aksjer) {
         
 
     });
 }
-
+//Henter alle aksjer 
 function hentAlleAksjene() {
     const url = "Home/visPortefolje?id=" + sessionStorage.getItem("id");
     $.get(url, function (visPortefolje) {
@@ -26,7 +28,7 @@ function hentAlleAksjene() {
     });
 }
 
-
+    //Formatterer alle akskjer som brukeren eier 
     function formaterAksjer(visPortefolje) {
         let totalAntall = 0;
         let totalVerdi = 0;
@@ -62,7 +64,7 @@ function hentAlleAksjene() {
         
     }
 
-
+    //Henter avkastning til brukeren 
     function hentAvkastnig(pris, totalAntall, totalVerdi) {
 
         let ut1 = "<table class='table table-striped' style='table-layout: fixed'>" +
