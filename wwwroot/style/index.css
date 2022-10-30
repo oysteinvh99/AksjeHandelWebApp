@@ -9,7 +9,7 @@ header{
     background-color:#5F9DF7;  
     position:sticky; 
     top:0;
-    height: 76px;
+    height: 75px;
 }
 
 #logoen{
@@ -100,24 +100,27 @@ langt oppe på siden  */
     padding-top:2vh;
 }
 
+.dropdown {
+  display: none;
+  visibility: hidden;
+}
 
+@media(max-width:1024px){
+  
+  #logoen{
+    visibility: hidden;
+  }
+  #navbar{
+    display: none;
+    visibility: none;
+  }
 
-
-@media only screen and (max-width: 800px) {
-    .nav-item {
-        line-height: 2;
-        font-size: 1.4vh;
-    }
-
-    #logo {
-        visibility: hidden;
-    }
-
-    #logoen {
-        visibility: hidden;
-    }
-
-    #logicon {
-        visibility: hidden;
-    }
+.dropdown{
+  margin-right: 4%;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  visibility: unset;
+  display: unset;
+  float: right;
+}
 }
