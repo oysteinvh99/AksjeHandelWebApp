@@ -104,6 +104,8 @@ namespace AksjeHandelWebApp.DAL
         {
             try
             {
+                Aksje enAskje = await _db.Aksjer.FindAsync(innOrdre.Aksje.Id);
+                innOrdre.Aksje = enAskje;
                 var nyeOrdre = new List<Ordre>();
                 innOrdre.Kjøpspris = innOrdre.Aksje.Verdi * innOrdre.AntallAksjer;
                 nyeOrdre.Add(innOrdre);
