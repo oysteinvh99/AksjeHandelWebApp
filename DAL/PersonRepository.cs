@@ -65,7 +65,7 @@ namespace AksjeHandelWebApp.DAL
             }
         }
 
-        //Sjekker om ny bruker eksisterer
+        //Sjekker om ny bruker allerede eksisterer
         public async Task<int> sjekkPerson(string email)
         {
 
@@ -80,7 +80,7 @@ namespace AksjeHandelWebApp.DAL
             }
         }
 
-
+        //Lagrer ny bruker
         public async Task<int> lagrePerson(Person innPerson)
         {
             try
@@ -99,7 +99,7 @@ namespace AksjeHandelWebApp.DAL
 
         }
 
-
+        //Registrere kjøp og salg 
         public async Task<bool> registrerOrdre(Ordre innOrdre)
         {
             try
@@ -238,7 +238,6 @@ namespace AksjeHandelWebApp.DAL
                 var endreObjekt = await _db.Personer.FindAsync(innPerson.Id);
                 endreObjekt.Fornavn = innPerson.Fornavn;
                 endreObjekt.Etternavn = innPerson.Etternavn;
-                endreObjekt.Email = innPerson.Email;
                 endreObjekt.Telefon = innPerson.Telefon;
                 await _db.SaveChangesAsync();
             }
