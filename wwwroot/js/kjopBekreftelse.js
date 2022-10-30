@@ -1,9 +1,9 @@
 $(function () {
-    const urlSearchParams = new URLSearchParams(window.location.search);
-    const params = Object.fromEntries(urlSearchParams.entries());
-    const aksjeID = params.id;
-    var antall = params.antall;
-    hent(aksjeID, antall)
+    const urlSearchParams = new URLSearchParams(window.location.search);    //Metode som finner variabler i url
+    const params = Object.fromEntries(urlSearchParams.entries());               
+    const aksjeID = params.id;                                              //Finner aksjeID i url
+    var antall = params.antall;                                             //Finner antall aksjer i url
+    hent(aksjeID, antall)                                                   //Kjører hent() metoden
 });
 
 
@@ -15,7 +15,7 @@ function hent(AID, antall) {
     });
 }
 
-
+//Formatterer bekreftelse informasjonen
 function formatter(Aksje, antall,AID) {
     var totalPris = 0;
     var antallet = 0;
@@ -26,6 +26,8 @@ function formatter(Aksje, antall,AID) {
     $("#antall").html(antallet);
     $("#aksjenSinIDGjemt").html(AID)
 }
+
+//Hvis brukeren ikke vil godkjenne så blir han sendt tilbake til main siden
 function ikkeGodkjenn() {
     window.location.href = 'aksjehandel.html';
 }
@@ -44,9 +46,9 @@ function bekreftOrdre() {
     $.get(url, function (Aksjen) {
         const url = "Home/hentPortefolje?id=" + sessionStorage.getItem("id");
         $.post(url, function (portefolje) {
-            //Hentet fra nettet, datetime
+            
             var currentdate = new Date();
-            var datetime = currentdate.getDay() + "/" + currentdate.getMonth()
+            var datetime = currentdate.getDay() + "/" + currentdate.getMonth()      //Kode for å hente nåværende tidspunkt
                 + "/" + currentdate.getFullYear() + "  "
                 + currentdate.getHours() + ":"
                 + currentdate.getMinutes() + ":" + currentdate.getSeconds();
@@ -62,11 +64,7 @@ function bekreftOrdre() {
             };
 
             $.post("Home/registrerOrdre", Ordre, function (registrert) {
-                if (registrert) {
-                    window.location.href = 'aksjehandel.html';
-                } else {
-                    //Noe gikk feil
-                }
+                window.location.href = 'aksjehandel.html';
             });
         });
     });

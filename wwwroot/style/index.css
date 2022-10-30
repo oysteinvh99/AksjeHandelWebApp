@@ -9,12 +9,21 @@ header{
     background-color:#5F9DF7;  
     position:sticky; 
     top:0;
+    height: 80px;
 }
 
 #logoen{
   padding-top: 1%;
 }
 
+#loggInnFelt{
+  background-color: #FF731D;
+}
+
+#loggInnFelt:hover{
+  background-color: #f79354;
+  color: #FFFBF3;
+}
 
 #logo{
   font-family: Arial;
@@ -37,10 +46,11 @@ langt oppe på siden  */
 }
 
   li a {
-    display: block;
+    display:block;
     color: #FFFBF3;
     padding: 10px;
     margin: 3%;
+    padding: none;
     text-decoration: none;
     border-radius: 20px;
     border-style:solid;
@@ -68,20 +78,20 @@ langt oppe på siden  */
   /* Icon til Logg inn knapp*/
   #logicon {
     content:url("../img/login_icon_w.png");
-    height:"80%";
-    width: "80%";
     padding-right: 15px;
     float:right;
+    margin-left: none;
+    margin-top: none;
   }
 
-  #logicon:hover{
-    content:url("../img/login_icon.png");
-    height:"80%";
-    width: "80%";
+  #minSide {
+    content:url("../img/user.png");
     padding-right: 15px;
     float:right;
+    margin-left: none;
+    margin-top: none;
   }
-  
+
 
   footer{
     margin-top: auto;

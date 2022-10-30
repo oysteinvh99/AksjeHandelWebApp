@@ -1,7 +1,8 @@
-﻿$(function () {
+﻿$(function () {                                //Henter person
     hentEnPerson();
 });
 
+//Validerer input for å endre person
 function validerPerson(person) {
     const regexp1 = /^[a-zA-ZæøåÆØÅ]{1,}$/;
     const regexp2 = /^[a-zA-ZæøåÆØÅ]{1,}$/;
@@ -53,6 +54,7 @@ function validerPerson(person) {
 
 }
 
+//Henter personen utifra id'en i session
 function hentEnPerson() {
     const url = "Home/hentPerson?id=" + sessionStorage.getItem("id");
     $.get(url, function (person) {
@@ -60,7 +62,7 @@ function hentEnPerson() {
 
     });
 
-
+//Formaterer personinformasjonen
     function formaterPerson(person) {
         $("#fornavn").val(person.fornavn)
         $("#etternavn").val(person.etternavn)
@@ -70,6 +72,7 @@ function hentEnPerson() {
     }
 }
 
+//Henter informasjonen og lager et nytt personobjekt, derretter lagres personen
 function rediger() {
     var person = {
         fornavn: $("#fornavn").val(),
