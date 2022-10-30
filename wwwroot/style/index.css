@@ -84,6 +84,14 @@ langt oppe på siden  */
     margin-top: none;
   }
 
+  #minSide {
+    content:url("../img/user.png");
+    padding-right: 15px;
+    float:right;
+    margin-left: none;
+    margin-top: none;
+  }
+
 
   footer{
     margin-top: auto;
