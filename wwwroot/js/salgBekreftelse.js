@@ -15,7 +15,7 @@ function hent(AID, antall) {
     });
 }
 
-
+//Formatterer bekreftelsen på salg med relevant informasjon 
 function formatter(Aksje, antall, AID) {
     var totalPris = 0;
     var antallet = 0;
@@ -27,11 +27,12 @@ function formatter(Aksje, antall, AID) {
     $("#aksjenSinIDGjemt").html(AID)
 }
 
+//Hvis brukeren ikke godkjenner blir han sendt tilbake til forrige side
 function ikkeGodkjenn() {
     window.location.href = 'aksjehandel.html';
 }
 
-//Registrere ordre, kjøp
+//Registrere ordre, salg
 function bekreftOrdre() {
    
 
@@ -89,18 +90,18 @@ function bekreftOrdre() {
                 };
 
                 $.post("Home/registrerOrdre", Ordre, function (registrert) {
-                    if (registrert) {
                         window.location.href = 'aksjehandel.html';
-                    } else {
-                        //Noe gikk feil
-                    }
                 });
             });
         });
     }
+    
+    //Funksjon for visning av feilmelding ved for lite aksjer for å kunne selge
     function forLite(visning) {
         $("#feil").html("Du prøvde å kjøpe " + antall + " av " + visning.aksje.firma.navn+ ". I din portefølje har du " + visning.antall + " av aksjen");
     }
+    
+    //Funksjon som vier feilmelding om at brukeren ikke har aksjen i portefoljen
     function harIkke() {
         $("#feil").html("Denne aksjen har du ikke i porteføljen din");
 
