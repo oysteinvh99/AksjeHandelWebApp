@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <title>Portefoljen din</title>
     <link rel="shortcut icon" href="img/favicon2.png">
     <link rel="stylesheet" href="style/index.css">
@@ -13,11 +14,25 @@
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                Navigasjonsmeny
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="indexLoggetInn.html">Forside</a></li>
+                <li><a class="dropdown-item" href="aksjehandel.html">Aksjehandel</a></li>
+                <li><a class="dropdown-item" href="visPortefolje.html">Portefølje</a></li>
+                <li><a class="dropdown-item" href="omOssLoggetInn.html">Om oss</a></li>
+                <li><a class="dropdown-item" href="minSide.html">Min side</a></li>
+            </ul>
+        </div>
+
+
+        <div id= "navbar" class="container">
             <div class="row">
                 <div id="logoen" class="col-3">
                     <a id="logo" href="indexLoggetInn.html">Aksjehandleren</a>
-               </div>
+                </div>
                 <div class="col-9">
                     <nav class="nav-fill px-2 py-2">
                         <div class="container-fluid">

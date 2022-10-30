@@ -105,22 +105,23 @@ langt oppe på siden  */
   visibility: hidden;
 }
 
-@media(max-width:1024px){
-  
-  #logoen{
-    visibility: hidden;
-  }
-  #navbar{
-    display: none;
-    visibility: none;
-  }
+@media(max-width:990px) {
 
-.dropdown{
-  margin-right: 4%;
-  margin-top: 4%;
-  margin-bottom: 4%;
-  visibility: unset;
-  display: unset;
-  float: right;
-}
+    #logoen {
+        visibility: hidden;
+    }
+
+    #navbar {
+        display: none;
+        visibility: none;
+    }
+
+    .dropdown {
+        margin-right: 4%;
+        margin-top: 2%;
+        margin-bottom: 3%;
+        visibility: unset;
+        display: unset;
+        float: right;
+    }
 }
