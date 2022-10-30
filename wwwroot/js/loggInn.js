@@ -2,7 +2,7 @@
     sessionStorage.clear("id");
 });
 
-
+//Regex for å sjekke om emailen er gyldig
 function validerEmail(email) {
     const regexp = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
     const ok = regexp.test(email);
@@ -13,6 +13,7 @@ function validerEmail(email) {
      }
     }
 
+//En metode for å logge inn   
 function loggInn() {
     const email = $("#email").val()// må ha med denne som ikke har blitt endret for å vite hvilken kunde som skal endre
     const url = "Home/sjekkPerson?email=" + email;
