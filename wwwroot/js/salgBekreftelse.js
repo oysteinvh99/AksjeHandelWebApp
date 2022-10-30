@@ -74,7 +74,7 @@ function bekreftOrdre() {
             $.post(url, function (portefolje) {
                 //Hentet fra nettet, datetime
                 var currentdate = new Date();
-                var datetime = currentdate.getDay() + "/" + currentdate.getMonth()
+                var datetime = currentdate.getDate() + "/" + currentdate.getMonth()
                     + "/" + currentdate.getFullYear() + "  "
                     + currentdate.getHours() + ":"
                     + currentdate.getMinutes() + ":" + currentdate.getSeconds();
