@@ -34,44 +34,44 @@ namespace AksjeHandelWebApp.Models
                 var nyFirma = new Firma
                 {
                     Navn = "Tesla",
-                    ForsteDagPaBors = "11.11.11",
+                    ForsteDagPaBors = "11.11.09",
                     Utbytte = true
                 };
 
                 var nyFirma1 = new Firma
                 {
                     Navn = "Equinor",
-                    ForsteDagPaBors = "11.11.11",
+                    ForsteDagPaBors = "11.11.18",
                     Utbytte = true
                 };
                 var nyFirma2 = new Firma
                 {
                     Navn = "Apple",
-                    ForsteDagPaBors = "11.11.11",
+                    ForsteDagPaBors = "01.12.18",
                     Utbytte = true
                 };
                 var nyFirma3 = new Firma
                 {
                     Navn = "Kahoot",
-                    ForsteDagPaBors = "11.11.11",
+                    ForsteDagPaBors = "11.04.19",
                     Utbytte = true
                 };
                 var nyFirma4 = new Firma
                 {
                     Navn = "Samsung",
-                    ForsteDagPaBors = "11.11.11",
+                    ForsteDagPaBors = "05.12.20",
                     Utbytte = true
                 };
                 var nyFirma5 = new Firma
                 {
                     Navn = "Amazon",
-                    ForsteDagPaBors = "11.11.11",
+                    ForsteDagPaBors = "02.04.19",
                     Utbytte = true
                 };
                 var nyFirma6 = new Firma
                 {
                     Navn = "Google",
-                    ForsteDagPaBors = "11.11.11",
+                    ForsteDagPaBors = "01.02.20",
                     Utbytte = true
                 };
 
@@ -116,7 +116,7 @@ namespace AksjeHandelWebApp.Models
 
                 var nyOrdre = new Ordre
                 {
-                    Dato = "24/9/2022 16:12",
+                    Dato = "24/9/2022 16:12:01",
                     Type = true,
                     AntallAksjer = 48,
                     Aksje = nyAksje,
@@ -125,7 +125,7 @@ namespace AksjeHandelWebApp.Models
 
                 var nyOrdre1 = new Ordre
                 {
-                    Dato = "20/10/2022 12:22",
+                    Dato = "20/10/2022 12:22:23",
                     Type = true,
                     AntallAksjer = 312,
                     Aksje = nyAksje1,
@@ -134,7 +134,7 @@ namespace AksjeHandelWebApp.Models
 
                 var nyOrdre2 = new Ordre
                 {
-                    Dato = "20/10/2022 13:11",
+                    Dato = "20/10/2022 13:11:05",
                     Type = true,
                     AntallAksjer = 172,
                     Aksje = nyAksje,
@@ -143,7 +143,7 @@ namespace AksjeHandelWebApp.Models
 
                 var nyOrdre3 = new Ordre
                 {
-                    Dato = "21/10/2022 14:01",
+                    Dato = "21/10/2022 14:01:44",
                     Type = true,
                     AntallAksjer = 149,
                     Aksje = nyAksje1,
